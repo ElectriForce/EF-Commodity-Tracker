@@ -27,146 +27,51 @@
     --radius: 6px;
     --radius-lg: 10px;
   }
-
   * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: var(--font-body); background: var(--gray-100); color: var(--black); font-size: 15px; line-height: 1.5; }
 
-  body {
-    font-family: var(--font-body);
-    background: var(--gray-100);
-    color: var(--black);
-    font-size: 15px;
-    line-height: 1.5;
-  }
-
-  /* ── Header ── */
-  header {
-    background: var(--black);
-    color: var(--white);
-    padding: 0 2rem;
-    display: flex;
-    align-items: stretch;
-    gap: 0;
-    border-bottom: 3px solid var(--yellow);
-  }
-  .header-brand {
-    display: flex;
-    align-items: center;
-    gap: 14px;
-    padding: 1rem 1.5rem 1rem 0;
-    border-right: 1px solid #333;
-    margin-right: 1.5rem;
-  }
-  .brand-mark {
-    width: 36px; height: 36px;
-    background: var(--yellow);
-    border-radius: 4px;
-    display: flex; align-items: center; justify-content: center;
-    font-family: var(--font-display);
-    font-weight: bold;
-    font-size: 16px;
-    color: var(--black);
-    flex-shrink: 0;
-  }
-  .brand-text { line-height: 1.2; }
+  header { background: var(--black); color: var(--white); padding: 0 2rem; display: flex; align-items: stretch; border-bottom: 3px solid var(--yellow); }
+  .header-brand { display: flex; align-items: center; gap: 14px; padding: 1rem 1.5rem 1rem 0; border-right: 1px solid #333; margin-right: 1.5rem; }
+  .brand-mark { width: 36px; height: 36px; background: var(--yellow); border-radius: 4px; display: flex; align-items: center; justify-content: center; font-family: var(--font-display); font-weight: bold; font-size: 16px; color: var(--black); flex-shrink: 0; }
   .brand-name { font-size: 13px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--white); }
   .brand-sub { font-size: 11px; color: var(--gray-400); letter-spacing: 0.04em; }
-  .header-title {
-    display: flex;
-    align-items: center;
-    flex: 1;
-  }
-  .header-title h1 {
-    font-family: var(--font-display);
-    font-size: 20px;
-    font-weight: normal;
-    color: var(--white);
-    letter-spacing: 0.01em;
-  }
+  .header-title { display: flex; align-items: center; flex: 1; }
+  .header-title h1 { font-family: var(--font-display); font-size: 20px; font-weight: normal; color: var(--white); }
   .header-title h1 span { color: var(--yellow); }
-  .header-actions {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    margin-left: auto;
-  }
-  #lastImport {
-    font-size: 12px;
-    color: var(--gray-400);
-    font-family: var(--font-mono);
-  }
-  .btn {
-    display: inline-flex; align-items: center; gap: 6px;
-    padding: 7px 14px;
-    border-radius: var(--radius);
-    border: 1px solid transparent;
-    font-size: 13px;
-    font-family: var(--font-body);
-    cursor: pointer;
-    transition: opacity 0.15s;
-    text-decoration: none;
-  }
+  .header-actions { display: flex; align-items: center; gap: 10px; margin-left: auto; }
+  #lastImport { font-size: 12px; color: var(--gray-400); font-family: var(--font-mono); }
+
+  .btn { display: inline-flex; align-items: center; gap: 6px; padding: 7px 14px; border-radius: var(--radius); border: 1px solid transparent; font-size: 13px; font-family: var(--font-body); cursor: pointer; transition: opacity 0.15s; text-decoration: none; }
   .btn:hover { opacity: 0.85; }
   .btn-primary { background: var(--yellow); color: var(--black); font-weight: 600; }
   .btn-ghost { background: transparent; color: var(--white); border-color: #444; }
   .btn-sm { padding: 5px 10px; font-size: 12px; }
 
-  /* ── Config Banner ── */
-  #configBanner {
-    background: #fff8e1;
-    border-bottom: 1px solid #ffe082;
-    padding: 10px 2rem;
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    font-size: 13px;
-    flex-wrap: wrap;
-  }
-  #configBanner.hidden { display: none; }
-  #configBanner strong { color: var(--yellow-dim); }
-  #configBanner input {
-    font-family: var(--font-mono);
-    font-size: 12px;
-    padding: 5px 8px;
-    border: 1px solid #ddd;
-    border-radius: var(--radius);
-    width: 320px;
-  }
+  /* Info banner */
+  #infoBanner { background: #fff8e1; border-bottom: 1px solid #ffe082; padding: 10px 2rem; font-size: 13px; color: #5a4500; display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+  #infoBanner.hidden { display: none; }
+  #infoBanner a { color: #7a6200; font-weight: 600; }
 
-  /* ── Layout ── */
   main { max-width: 1200px; margin: 0 auto; padding: 1.5rem 2rem 3rem; }
 
-  /* ── Upload zone ── */
-  #uploadZone {
-    border: 2px dashed var(--gray-200);
-    border-radius: var(--radius-lg);
-    padding: 2rem;
-    text-align: center;
-    background: var(--white);
-    margin-bottom: 1.5rem;
-    transition: border-color 0.2s, background 0.2s;
-    cursor: pointer;
-    position: relative;
-  }
-  #uploadZone.drag-over { border-color: var(--yellow); background: #fffbea; }
-  #uploadZone input[type=file] { position: absolute; inset: 0; opacity: 0; cursor: pointer; width: 100%; height: 100%; }
-  .upload-icon { font-size: 28px; margin-bottom: 8px; }
-  #uploadZone p { font-size: 14px; color: var(--gray-600); }
-  #uploadZone strong { color: var(--black); }
-  #uploadStatus { margin-top: 8px; font-size: 13px; color: var(--gray-600); min-height: 20px; }
+  /* Upload instructions */
+  .upload-card { background: var(--white); border: 1px solid var(--gray-200); border-radius: var(--radius-lg); padding: 1.5rem 2rem; margin-bottom: 1.5rem; display: flex; align-items: flex-start; gap: 1.5rem; }
+  .upload-steps { flex: 1; }
+  .upload-steps h2 { font-size: 14px; font-weight: 600; margin-bottom: 0.75rem; color: var(--gray-600); text-transform: uppercase; letter-spacing: 0.06em; }
+  .steps { display: flex; gap: 1.5rem; flex-wrap: wrap; }
+  .step { display: flex; align-items: flex-start; gap: 10px; flex: 1; min-width: 160px; }
+  .step-num { width: 24px; height: 24px; background: var(--yellow); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 700; color: var(--black); flex-shrink: 0; margin-top: 1px; }
+  .step-text { font-size: 13px; color: var(--gray-600); line-height: 1.4; }
+  .step-text strong { color: var(--black); display: block; margin-bottom: 2px; }
+  .upload-link { display: inline-flex; align-items: center; gap: 6px; background: var(--black); color: var(--yellow); padding: 8px 16px; border-radius: var(--radius); font-size: 13px; font-weight: 600; text-decoration: none; flex-shrink: 0; align-self: center; }
+  .upload-link:hover { opacity: 0.85; }
 
-  /* ── Metrics ── */
-  .metrics-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-    gap: 10px;
-    margin-bottom: 1.5rem;
-  }
-  .metric {
-    background: var(--white);
-    border-radius: var(--radius);
-    padding: 1rem 1.1rem;
-    border-left: 3px solid var(--gray-200);
-  }
+  /* Refresh banner */
+  #refreshBanner { background: #e8f5ed; border: 1px solid #a8d5b5; border-radius: var(--radius); padding: 10px 1rem; margin-bottom: 1.5rem; font-size: 13px; color: #1a5c2e; display: flex; align-items: center; gap: 10px; }
+  #refreshBanner.hidden { display: none; }
+
+  .metrics-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 10px; margin-bottom: 1.5rem; }
+  .metric { background: var(--white); border-radius: var(--radius); padding: 1rem 1.1rem; border-left: 3px solid var(--gray-200); }
   .metric.up-card { border-left-color: var(--up); }
   .metric.down-card { border-left-color: var(--down); }
   .metric-label { font-size: 11px; color: var(--gray-400); text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 4px; }
@@ -175,146 +80,56 @@
   .metric-change.up { color: var(--up); }
   .metric-change.down { color: var(--down); }
 
-  /* ── Controls ── */
-  .controls-row {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    margin-bottom: 1rem;
-    flex-wrap: wrap;
-  }
+  .controls-row { display: flex; align-items: center; gap: 8px; margin-bottom: 1rem; flex-wrap: wrap; }
   .controls-label { font-size: 12px; color: var(--gray-600); font-weight: 500; text-transform: uppercase; letter-spacing: 0.05em; }
-  .pill {
-    font-size: 12px;
-    padding: 4px 12px;
-    border-radius: 99px;
-    border: 1px solid var(--gray-200);
-    cursor: pointer;
-    background: var(--white);
-    color: var(--gray-600);
-    font-family: var(--font-body);
-    transition: all 0.15s;
-  }
+  .pill { font-size: 12px; padding: 4px 12px; border-radius: 99px; border: 1px solid var(--gray-200); cursor: pointer; background: var(--white); color: var(--gray-600); font-family: var(--font-body); transition: all 0.15s; }
   .pill:hover { border-color: var(--gray-400); }
   .pill.active { background: var(--black); color: var(--white); border-color: var(--black); }
 
-  /* ── Chart card ── */
-  .card {
-    background: var(--white);
-    border-radius: var(--radius-lg);
-    border: 1px solid var(--gray-200);
-    padding: 1.25rem 1.5rem;
-    margin-bottom: 1.25rem;
-  }
-  .card-header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-bottom: 1rem;
-    flex-wrap: wrap;
-    gap: 8px;
-  }
+  .card { background: var(--white); border-radius: var(--radius-lg); border: 1px solid var(--gray-200); padding: 1.25rem 1.5rem; margin-bottom: 1.25rem; }
+  .card-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem; flex-wrap: wrap; gap: 8px; }
   .card-title { font-size: 13px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em; color: var(--gray-600); }
   .legend { display: flex; flex-wrap: wrap; gap: 14px; font-size: 12px; color: var(--gray-600); }
   .legend-item { display: flex; align-items: center; gap: 5px; }
   .legend-swatch { width: 24px; height: 3px; border-radius: 2px; flex-shrink: 0; }
 
-  /* ── Table ── */
   .table-wrap { overflow-x: auto; }
   table { width: 100%; border-collapse: collapse; font-size: 13px; }
-  thead th {
-    text-align: left;
-    padding: 8px 12px 8px 0;
-    font-size: 11px;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.06em;
-    color: var(--gray-400);
-    border-bottom: 2px solid var(--gray-200);
-    white-space: nowrap;
-  }
-  tbody td {
-    padding: 9px 12px 9px 0;
-    border-bottom: 1px solid var(--gray-100);
-    color: var(--black);
-    vertical-align: middle;
-  }
+  thead th { text-align: left; padding: 8px 12px 8px 0; font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em; color: var(--gray-400); border-bottom: 2px solid var(--gray-200); white-space: nowrap; }
+  tbody td { padding: 9px 12px 9px 0; border-bottom: 1px solid var(--gray-100); color: var(--black); vertical-align: middle; }
   tbody tr:last-child td { border-bottom: none; }
   tbody tr:hover td { background: #fafafa; }
   .item-name { font-weight: 500; }
-  .cat-badge {
-    display: inline-block;
-    font-size: 10px;
-    padding: 2px 7px;
-    border-radius: 99px;
-    font-weight: 600;
-    letter-spacing: 0.04em;
-    text-transform: uppercase;
-  }
+  .cat-badge { display: inline-block; font-size: 10px; padding: 2px 7px; border-radius: 99px; font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase; }
   .price-cell { font-family: var(--font-mono); font-size: 13px; }
-  .change-badge {
-    display: inline-flex;
-    align-items: center;
-    gap: 3px;
-    font-size: 11px;
-    font-weight: 600;
-    padding: 2px 8px;
-    border-radius: 99px;
-  }
+  .change-badge { display: inline-flex; align-items: center; gap: 3px; font-size: 11px; font-weight: 600; padding: 2px 8px; border-radius: 99px; }
   .change-badge.up { background: var(--up-bg); color: var(--up); }
   .change-badge.down { background: var(--down-bg); color: var(--down); }
   .change-badge.flat { background: var(--flat-bg); color: var(--flat); }
 
-  /* ── Empty state ── */
-  #emptyState {
-    text-align: center;
-    padding: 3rem 1rem;
-    color: var(--gray-400);
-  }
+  #emptyState { text-align: center; padding: 3rem 1rem; color: var(--gray-400); }
   #emptyState p { font-size: 14px; margin-top: 8px; }
 
-  /* ── Toast ── */
-  #toast {
-    position: fixed;
-    bottom: 1.5rem;
-    right: 1.5rem;
-    background: var(--black);
-    color: var(--white);
-    padding: 10px 18px;
-    border-radius: var(--radius);
-    font-size: 13px;
-    opacity: 0;
-    transform: translateY(8px);
-    transition: all 0.2s;
-    pointer-events: none;
-    z-index: 999;
-    border-left: 3px solid var(--yellow);
-  }
+  #loadingState { text-align: center; padding: 3rem 1rem; color: var(--gray-400); }
+  .spinner { display: inline-block; width: 24px; height: 24px; border: 2px solid var(--gray-200); border-top-color: var(--yellow); border-radius: 50%; animation: spin 0.8s linear infinite; margin-bottom: 8px; }
+  @keyframes spin { to { transform: rotate(360deg); } }
+
+  #toast { position: fixed; bottom: 1.5rem; right: 1.5rem; background: var(--black); color: var(--white); padding: 10px 18px; border-radius: var(--radius); font-size: 13px; opacity: 0; transform: translateY(8px); transition: all 0.2s; pointer-events: none; z-index: 999; border-left: 3px solid var(--yellow); }
   #toast.show { opacity: 1; transform: translateY(0); }
 
-  /* ── Responsive ── */
   @media (max-width: 640px) {
     header { padding: 0 1rem; flex-wrap: wrap; }
     main { padding: 1rem; }
-    .header-brand { border-right: none; padding-right: 0; }
-    .header-title h1 { font-size: 16px; }
-    #configBanner input { width: 100%; }
+    .upload-card { flex-direction: column; }
+    .steps { flex-direction: column; }
   }
-
-  @media (prefers-reduced-motion: reduce) {
-    * { transition: none !important; }
-  }
-
-  /* focus ring */
+  @media (prefers-reduced-motion: reduce) { * { transition: none !important; animation: none !important; } }
   :focus-visible { outline: 2px solid var(--yellow); outline-offset: 2px; }
-
-  /* screen reader only */
   .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
 </style>
 </head>
 <body>
 
-<!-- ── Header ── -->
 <header role="banner">
   <div class="header-brand">
     <div class="brand-mark" aria-hidden="true">EF</div>
@@ -328,48 +143,53 @@
   </div>
   <div class="header-actions">
     <span id="lastImport" aria-live="polite"></span>
-    <button class="btn btn-ghost btn-sm" id="exportBtn" onclick="exportCSV()">Export CSV</button>
-    <button class="btn btn-ghost btn-sm" id="settingsBtn" onclick="toggleConfig()">Settings</button>
+    <button class="btn btn-ghost btn-sm" onclick="exportCSV()">Export CSV</button>
+    <button class="btn btn-ghost btn-sm" onclick="loadData()">↻ Refresh</button>
   </div>
 </header>
 
-<!-- ── Config Banner ── -->
-<div id="configBanner" role="region" aria-label="GitHub configuration">
-  <strong>⚙ Connect to GitHub</strong>
-  <span>to save price history across sessions.</span>
-  <label for="ghToken" class="sr-only">GitHub personal access token</label>
-  <input type="password" id="ghToken" placeholder="Paste your GitHub token (ghp_...)" autocomplete="off" />
-  <button class="btn btn-primary btn-sm" onclick="saveConfig()">Connect</button>
-  <button class="btn btn-ghost btn-sm" onclick="dismissConfig()" style="color:#555; border-color:#ccc;">Later</button>
+<div id="infoBanner" role="region" aria-label="Status">
+  ⚡ Loading price history from GitHub…
 </div>
 
-<!-- ── Main ── -->
 <main id="main-content">
 
-  <!-- Upload -->
-  <section aria-label="Import hot sheet">
-    <div id="uploadZone"
-         role="button"
-         tabindex="0"
-         aria-label="Upload Mayer hot sheet PDF"
-         ondragover="handleDrag(event, true)"
-         ondragleave="handleDrag(event, false)"
-         ondrop="handleDrop(event)"
-         onkeydown="if(event.key==='Enter'||event.key===' ') document.getElementById('fileInput').click()">
-      <input type="file" accept=".pdf" id="fileInput" onchange="handleFile(event)" aria-label="Choose PDF file" tabindex="-1" />
-      <div class="upload-icon" aria-hidden="true">📄</div>
-      <p><strong>Drop your Mayer hot sheet here</strong> or click to browse</p>
-      <p>PDF format · prices saved to GitHub automatically</p>
-      <div id="uploadStatus" aria-live="polite" aria-atomic="true"></div>
+  <!-- How to import -->
+  <div class="upload-card" role="region" aria-label="How to import a hot sheet">
+    <div class="upload-steps">
+      <h2>Import a new hot sheet</h2>
+      <div class="steps">
+        <div class="step">
+          <div class="step-num" aria-hidden="true">1</div>
+          <div class="step-text"><strong>Go to the repo inbox</strong>Click the button to open GitHub</div>
+        </div>
+        <div class="step">
+          <div class="step-num" aria-hidden="true">2</div>
+          <div class="step-text"><strong>Upload the PDF</strong>Add file → Upload files → drop the hot sheet</div>
+        </div>
+        <div class="step">
+          <div class="step-num" aria-hidden="true">3</div>
+          <div class="step-text"><strong>Commit to main</strong>GitHub Action runs automatically (~30 sec)</div>
+        </div>
+        <div class="step">
+          <div class="step-num" aria-hidden="true">4</div>
+          <div class="step-text"><strong>Refresh this page</strong>New prices and trends appear</div>
+        </div>
+      </div>
     </div>
-  </section>
+    <a href="https://github.com/ElectriForce/EF-Commodity-Tracker/upload/main/inbox" target="_blank" rel="noopener" class="upload-link" aria-label="Open GitHub inbox folder to upload PDF">
+      Upload PDF →
+    </a>
+  </div>
 
-  <!-- Metrics -->
+  <div id="refreshBanner" class="hidden" role="status" aria-live="polite">
+    ✓ Data loaded — showing latest prices
+  </div>
+
   <section aria-label="Price highlights" id="metricsSection" hidden>
     <div class="metrics-grid" id="metricsGrid"></div>
   </section>
 
-  <!-- Category filter -->
   <div class="controls-row" role="group" aria-label="Filter by category">
     <span class="controls-label" aria-hidden="true">Category</span>
     <button class="pill active" onclick="filterCat(this,'all')" aria-pressed="true">All</button>
@@ -385,10 +205,9 @@
     <button class="pill" onclick="filterCat(this,'Fittings')" aria-pressed="false">Fittings</button>
   </div>
 
-  <!-- Trend chart -->
   <div class="card" id="chartCard" hidden>
     <div class="card-header">
-      <span class="card-title">Price trend — tracked items</span>
+      <span class="card-title">Price trend — most volatile items</span>
       <div class="legend" id="chartLegend" aria-label="Chart legend"></div>
     </div>
     <div style="position:relative; width:100%; height:280px;">
@@ -396,17 +215,20 @@
     </div>
   </div>
 
-  <!-- Price table -->
   <div class="card">
     <div class="card-header">
-      <span class="card-title" id="tableTitle">Latest prices</span>
+      <span class="card-title">Latest prices</span>
       <span style="font-size:12px; color:var(--gray-400);" id="itemCount"></span>
     </div>
     <div class="table-wrap">
-      <div id="emptyState">
+      <div id="loadingState">
+        <div class="spinner" aria-hidden="true"></div>
+        <p>Loading prices…</p>
+      </div>
+      <div id="emptyState" style="display:none;">
         <p style="font-size:32px;">📋</p>
-        <p>Upload a hot sheet to see prices here.</p>
-        <p style="margin-top:4px; font-size:12px;">Connect GitHub above to track changes over time.</p>
+        <p>No price data yet.</p>
+        <p style="margin-top:4px; font-size:12px;">Upload a hot sheet PDF to the inbox folder above to get started.</p>
       </div>
       <table id="priceTable" hidden aria-label="Material prices">
         <thead>
@@ -426,223 +248,109 @@
 
 </main>
 
-<!-- Toast -->
 <div id="toast" role="status" aria-live="polite" aria-atomic="true"></div>
 
-<!-- Chart.js -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
-
 <script>
-// ── Config ──────────────────────────────────────────
 const GITHUB_OWNER = 'ElectriForce';
 const GITHUB_REPO  = 'EF-Commodity-Tracker';
-const DATA_PATH    = 'data/prices.json';
+const DATA_URL     = `https://raw.githubusercontent.com/${GITHUB_OWNER}/${GITHUB_REPO}/main/data/prices.json`;
 
-let ghToken = localStorage.getItem('ef_gh_token') || '';
-let priceHistory = []; // [{date, items:[{name,category,price}]}]
+let priceHistory = [];
 let currentFilter = 'all';
 let trendChart = null;
 
-// ── Init ────────────────────────────────────────────
-window.addEventListener('DOMContentLoaded', async () => {
-  if (ghToken) {
-    document.getElementById('configBanner').classList.add('hidden');
-    document.getElementById('ghToken').value = ghToken;
-    await loadFromGitHub();
-  } else {
-    document.getElementById('configBanner').classList.remove('hidden');
-  }
-});
+const catColors = {
+  'THHN':'#1a6bb5','NM-B':'#7b3fa0','MC Cable':'#b56a1a',
+  'XHHW':'#2a7a3a','EMT':'#c0392b','Galv':'#555',
+  'PVC':'#1a8a8a','IMC':'#8a5a1a','Alum':'#4a4a8a',
+  'Fittings':'#7a5a3a','Bare Copper':'#c47a1a'
+};
 
-// ── Config ──────────────────────────────────────────
-function saveConfig() {
-  const val = document.getElementById('ghToken').value.trim();
-  if (!val.startsWith('ghp_')) { showToast('Token should start with ghp_'); return; }
-  ghToken = val;
-  localStorage.setItem('ef_gh_token', ghToken);
-  document.getElementById('configBanner').classList.add('hidden');
-  showToast('GitHub connected ✓');
-  loadFromGitHub();
-}
-function dismissConfig() { document.getElementById('configBanner').classList.add('hidden'); }
-function toggleConfig() {
-  const b = document.getElementById('configBanner');
-  b.classList.toggle('hidden');
-}
+window.addEventListener('DOMContentLoaded', loadData);
 
-// ── GitHub API ───────────────────────────────────────
-async function loadFromGitHub() {
-  if (!ghToken) return;
+async function loadData() {
+  setInfo('Loading price history…');
+  document.getElementById('loadingState').style.display = 'block';
+  document.getElementById('emptyState').style.display = 'none';
+  document.getElementById('priceTable').hidden = true;
+
   try {
-    const res = await fetch(`https://api.github.com/repos/${GITHUB_OWNER}/${GITHUB_REPO}/contents/${DATA_PATH}`, {
-      headers: { Authorization: `token ${ghToken}`, Accept: 'application/vnd.github.v3+json' }
-    });
-    if (res.status === 404) { priceHistory = []; return; }
-    if (!res.ok) throw new Error('GitHub fetch failed');
-    const json = await res.json();
-    priceHistory = JSON.parse(atob(json.content.replace(/\n/g,'')));
+    const res = await fetch(DATA_URL + '?t=' + Date.now());
+    if (res.status === 404) {
+      priceHistory = [];
+      setInfo('No price data yet — upload a hot sheet to get started.', false);
+      showEmpty();
+      return;
+    }
+    if (!res.ok) throw new Error(`HTTP ${res.status}`);
+    priceHistory = await res.json();
     renderAll();
-    showToast('Price history loaded ✓');
+    setInfo('', false);
+    const banner = document.getElementById('refreshBanner');
+    banner.classList.remove('hidden');
+    setTimeout(() => banner.classList.add('hidden'), 3000);
   } catch(e) {
-    showToast('Could not load history — check token');
+    setInfo('Could not load data — check your connection.', false);
+    showEmpty();
     console.error(e);
   }
 }
 
-async function saveToGitHub(newSnapshot) {
-  if (!ghToken) { showToast('Connect GitHub to save history'); return; }
-  try {
-    // get current SHA
-    let sha = null;
-    const check = await fetch(`https://api.github.com/repos/${GITHUB_OWNER}/${GITHUB_REPO}/contents/${DATA_PATH}`, {
-      headers: { Authorization: `token ${ghToken}`, Accept: 'application/vnd.github.v3+json' }
-    });
-    if (check.ok) { const j = await check.json(); sha = j.sha; }
-
-    const content = btoa(unescape(encodeURIComponent(JSON.stringify(priceHistory, null, 2))));
-    const body = { message: `Price import ${newSnapshot.date}`, content };
-    if (sha) body.sha = sha;
-
-    const res = await fetch(`https://api.github.com/repos/${GITHUB_OWNER}/${GITHUB_REPO}/contents/${DATA_PATH}`, {
-      method: 'PUT',
-      headers: { Authorization: `token ${ghToken}`, Accept: 'application/vnd.github.v3+json', 'Content-Type': 'application/json' },
-      body: JSON.stringify(body)
-    });
-    if (!res.ok) throw new Error('Save failed');
-    showToast('Saved to GitHub ✓');
-  } catch(e) {
-    showToast('GitHub save failed — check token/permissions');
-    console.error(e);
-  }
+function setInfo(msg, show = true) {
+  const b = document.getElementById('infoBanner');
+  b.textContent = msg ? '⚡ ' + msg : '';
+  b.classList.toggle('hidden', !show && !msg);
+  if (!msg) b.classList.add('hidden');
 }
 
-// ── PDF Upload & Parse ───────────────────────────────
-function handleDrag(e, active) { e.preventDefault(); document.getElementById('uploadZone').classList.toggle('drag-over', active); }
-function handleDrop(e) {
-  e.preventDefault();
-  document.getElementById('uploadZone').classList.remove('drag-over');
-  const file = e.dataTransfer.files[0];
-  if (file && file.type === 'application/pdf') processFile(file);
-  else showToast('Please drop a PDF file');
-}
-function handleFile(e) { const f = e.target.files[0]; if(f) processFile(f); }
-
-async function processFile(file) {
-  setUploadStatus('Reading PDF…');
-  try {
-    const base64 = await fileToBase64(file);
-    setUploadStatus('Parsing prices with AI…');
-    const items = await parsePDFWithClaude(base64);
-    if (!items || items.length === 0) throw new Error('No prices found');
-
-    const today = new Date().toISOString().split('T')[0];
-    const snapshot = { date: today, source: file.name, items };
-
-    // remove any existing entry for same date
-    priceHistory = priceHistory.filter(s => s.date !== today);
-    priceHistory.push(snapshot);
-    priceHistory.sort((a,b) => a.date.localeCompare(b.date));
-
-    renderAll();
-    await saveToGitHub(snapshot);
-    setUploadStatus(`✓ Imported ${items.length} prices from ${file.name}`);
-    document.getElementById('lastImport').textContent = `Last import: ${today}`;
-  } catch(e) {
-    setUploadStatus('Error parsing PDF — please try again');
-    showToast('Parse failed: ' + e.message);
-    console.error(e);
-  }
+function showEmpty() {
+  document.getElementById('loadingState').style.display = 'none';
+  document.getElementById('emptyState').style.display = 'block';
+  document.getElementById('priceTable').hidden = true;
 }
 
-function fileToBase64(file) {
-  return new Promise((resolve, reject) => {
-    const r = new FileReader();
-    r.onload = () => resolve(r.result.split(',')[1]);
-    r.onerror = () => reject(new Error('File read failed'));
-    r.readAsDataURL(file);
-  });
-}
-
-async function parsePDFWithClaude(base64) {
-  const res = await fetch('https://api.anthropic.com/v1/messages', {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({
-      model: 'claude-sonnet-4-20250514',
-      max_tokens: 4000,
-      system: `You are a data extraction assistant. Extract all material prices from this electrical supply hot sheet PDF.
-Return ONLY a JSON array, no markdown, no explanation. Each object must have exactly these fields:
-- "name": string (item name as shown, e.g. "THHN 14 BLK SOL CU")
-- "category": string — assign one of: THHN, NM-B, MC Cable, XHHW, EMT, Galv, PVC, IMC, Alum, Fittings, Bare Copper
-- "price": number (numeric value only, no $ sign)
-Do not include any text before or after the JSON array.`,
-      messages: [{
-        role: 'user',
-        content: [{
-          type: 'document',
-          source: { type: 'base64', media_type: 'application/pdf', data: base64 }
-        }, {
-          type: 'text',
-          text: 'Extract all items and prices from this hot sheet. Return JSON array only.'
-        }]
-      }]
-    })
-  });
-  if (!res.ok) throw new Error(`API error ${res.status}`);
-  const data = await res.json();
-  const text = data.content.map(b => b.text || '').join('').trim();
-  const clean = text.replace(/```json|```/g, '').trim();
-  return JSON.parse(clean);
-}
-
-// ── Render ───────────────────────────────────────────
 function renderAll() {
-  if (priceHistory.length === 0) return;
+  if (!priceHistory.length) { showEmpty(); return; }
   const latest = priceHistory[priceHistory.length - 1];
   const prev   = priceHistory.length > 1 ? priceHistory[priceHistory.length - 2] : null;
 
   document.getElementById('lastImport').textContent = `Last import: ${latest.date}`;
-  document.getElementById('lastImport').setAttribute('datetime', latest.date);
-
   renderMetrics(latest, prev);
   renderTable(latest, prev);
   renderChart();
 }
 
-function getPrevPrice(item, prevSnapshot) {
-  if (!prevSnapshot) return null;
-  const match = prevSnapshot.items.find(i => i.name === item.name);
-  return match ? match.price : null;
+function getPrevPrice(item, prevSnap) {
+  if (!prevSnap) return null;
+  const m = prevSnap.items.find(i => i.name === item.name);
+  return m ? m.price : null;
 }
-
 function changePct(curr, prev) {
   if (prev === null || prev === 0) return null;
-  return ((curr - prev) / prev * 100);
+  return (curr - prev) / prev * 100;
+}
+function fmtPrice(n) {
+  return '$' + n.toLocaleString('en-US', {minimumFractionDigits:2, maximumFractionDigits:2});
 }
 
 function renderMetrics(latest, prev) {
   const section = document.getElementById('metricsSection');
-  const grid = document.getElementById('metricsGrid');
-  // pick 4 notable items: biggest up, biggest down, most watched
   const withChange = latest.items.map(item => {
     const pp = getPrevPrice(item, prev);
-    const pct = changePct(item.price, pp);
-    return { ...item, prevPrice: pp, pct };
+    return { ...item, prevPrice: pp, pct: changePct(item.price, pp) };
   }).filter(i => i.pct !== null);
-
   withChange.sort((a,b) => Math.abs(b.pct) - Math.abs(a.pct));
-  const highlighted = withChange.slice(0, 4);
-  if (highlighted.length === 0) { section.hidden = true; return; }
-
-  grid.innerHTML = highlighted.map(item => {
+  const top = withChange.slice(0, 4);
+  if (!top.length) { section.hidden = true; return; }
+  document.getElementById('metricsGrid').innerHTML = top.map(item => {
     const up = item.pct > 0;
     const dir = up ? 'up' : 'down';
-    const arrow = up ? '▲' : '▼';
     return `<div class="metric ${dir}-card">
       <div class="metric-label">${item.name}</div>
-      <div class="metric-value">$${item.price.toLocaleString('en-US', {minimumFractionDigits:2, maximumFractionDigits:2})}</div>
-      <div class="metric-change ${dir}" aria-label="${Math.abs(item.pct).toFixed(1)}% ${up?'increase':'decrease'} from previous week">
-        ${arrow} ${Math.abs(item.pct).toFixed(1)}% vs prev week
+      <div class="metric-value">${fmtPrice(item.price)}</div>
+      <div class="metric-change ${dir}" aria-label="${Math.abs(item.pct).toFixed(1)}% ${up?'increase':'decrease'}">
+        ${up?'▲':'▼'} ${Math.abs(item.pct).toFixed(1)}% vs prev week
       </div>
     </div>`;
   }).join('');
@@ -650,46 +358,30 @@ function renderMetrics(latest, prev) {
 }
 
 function renderTable(latest, prev) {
-  const tbody = document.getElementById('priceTableBody');
-  const table = document.getElementById('priceTable');
-  const empty = document.getElementById('emptyState');
-
-  const catColors = {
-    'THHN': '#1a6bb5', 'NM-B': '#7b3fa0', 'MC Cable': '#b56a1a',
-    'XHHW': '#2a7a3a', 'EMT': '#c0392b', 'Galv': '#555',
-    'PVC': '#1a8a8a', 'IMC': '#8a5a1a', 'Alum': '#4a4a8a',
-    'Fittings': '#7a5a3a', 'Bare Copper': '#c47a1a'
-  };
-
   let items = latest.items;
   if (currentFilter !== 'all') items = items.filter(i => i.category === currentFilter);
-
   document.getElementById('itemCount').textContent = `${items.length} items`;
+  if (!items.length) { showEmpty(); return; }
 
-  if (items.length === 0) {
-    table.hidden = true; empty.style.display = 'block'; return;
-  }
-  empty.style.display = 'none';
-  table.hidden = false;
+  document.getElementById('loadingState').style.display = 'none';
+  document.getElementById('emptyState').style.display = 'none';
+  document.getElementById('priceTable').hidden = false;
 
-  tbody.innerHTML = items.map(item => {
+  document.getElementById('priceTableBody').innerHTML = items.map(item => {
     const pp = getPrevPrice(item, prev);
     const pct = changePct(item.price, pp);
-    let badge = '<span class="change-badge flat" aria-label="No change data">—</span>';
+    let badge = '<span class="change-badge flat" aria-label="No previous data">—</span>';
     if (pct !== null) {
       const up = pct > 0;
-      const dir = up ? 'up' : 'down';
-      const arrow = up ? '▲' : '▼';
       const abs = Math.abs(pct).toFixed(1);
-      badge = `<span class="change-badge ${dir}" aria-label="${abs}% ${up?'increase':'decrease'}">${arrow} ${abs}%</span>`;
+      badge = `<span class="change-badge ${up?'up':'down'}" aria-label="${abs}% ${up?'increase':'decrease'}">${up?'▲':'▼'} ${abs}%</span>`;
     }
     const color = catColors[item.category] || '#888';
-    const ppStr = pp !== null ? `$${pp.toLocaleString('en-US',{minimumFractionDigits:2,maximumFractionDigits:2})}` : '—';
     return `<tr>
       <td class="item-name">${item.name}</td>
       <td><span class="cat-badge" style="background:${color}18; color:${color};">${item.category}</span></td>
-      <td class="price-cell">$${item.price.toLocaleString('en-US',{minimumFractionDigits:2,maximumFractionDigits:2})}</td>
-      <td class="price-cell" style="color:var(--gray-400);">${ppStr}</td>
+      <td class="price-cell">${fmtPrice(item.price)}</td>
+      <td class="price-cell" style="color:var(--gray-400);">${pp !== null ? fmtPrice(pp) : '—'}</td>
       <td>${badge}</td>
       <td style="color:var(--gray-400); font-family:var(--font-mono); font-size:12px;">${latest.date}</td>
     </tr>`;
@@ -701,7 +393,6 @@ function renderChart() {
   if (priceHistory.length < 2) { card.hidden = true; return; }
   card.hidden = false;
 
-  // pick up to 5 items with most price variation
   const allNames = [...new Set(priceHistory.flatMap(s => s.items.map(i => i.name)))];
   const variance = allNames.map(name => {
     const prices = priceHistory.map(s => s.items.find(i => i.name === name)?.price).filter(Boolean);
@@ -719,20 +410,12 @@ function renderChart() {
   const datasets = tracked.map((name, i) => ({
     label: name,
     data: priceHistory.map(s => s.items.find(it => it.name === name)?.price ?? null),
-    borderColor: colors[i],
-    backgroundColor: 'transparent',
-    tension: 0.3,
-    pointRadius: 4,
-    borderDash: dashes[i],
-    spanGaps: true
+    borderColor: colors[i], backgroundColor: 'transparent',
+    tension: 0.3, pointRadius: 4, borderDash: dashes[i], spanGaps: true
   }));
 
-  const legend = document.getElementById('chartLegend');
-  legend.innerHTML = tracked.map((name, i) =>
-    `<span class="legend-item">
-      <span class="legend-swatch" style="background:${colors[i]}; ${dashes[i].length ? `background: repeating-linear-gradient(90deg,${colors[i]} 0,${colors[i]} 6px,transparent 6px,transparent 9px)` : ''}"></span>
-      ${name}
-    </span>`
+  document.getElementById('chartLegend').innerHTML = tracked.map((name, i) =>
+    `<span class="legend-item"><span class="legend-swatch" style="background:${colors[i]};"></span>${name}</span>`
   ).join('');
 
   if (trendChart) trendChart.destroy();
@@ -740,57 +423,42 @@ function renderChart() {
     type: 'line',
     data: { labels, datasets },
     options: {
-      responsive: true,
-      maintainAspectRatio: false,
+      responsive: true, maintainAspectRatio: false,
       plugins: { legend: { display: false } },
       scales: {
-        y: {
-          ticks: { callback: v => '$' + v.toLocaleString() },
-          grid: { color: 'rgba(0,0,0,0.05)' }
-        },
+        y: { ticks: { callback: v => '$' + v.toLocaleString() }, grid: { color: 'rgba(0,0,0,0.05)' } },
         x: { ticks: { autoSkip: false, maxRotation: 45 } }
       }
     }
   });
 }
 
-// ── Filter ───────────────────────────────────────────
 function filterCat(btn, cat) {
   document.querySelectorAll('.pill').forEach(p => { p.classList.remove('active'); p.setAttribute('aria-pressed','false'); });
-  btn.classList.add('active');
-  btn.setAttribute('aria-pressed','true');
+  btn.classList.add('active'); btn.setAttribute('aria-pressed','true');
   currentFilter = cat;
-  if (priceHistory.length > 0) {
-    const latest = priceHistory[priceHistory.length - 1];
-    const prev   = priceHistory.length > 1 ? priceHistory[priceHistory.length - 2] : null;
+  if (priceHistory.length) {
+    const latest = priceHistory[priceHistory.length-1];
+    const prev = priceHistory.length > 1 ? priceHistory[priceHistory.length-2] : null;
     renderTable(latest, prev);
   }
 }
 
-// ── Export CSV ───────────────────────────────────────
 function exportCSV() {
-  if (priceHistory.length === 0) { showToast('No data to export yet'); return; }
+  if (!priceHistory.length) { showToast('No data to export yet'); return; }
   const rows = [['Date','Item','Category','Price']];
-  priceHistory.forEach(snap => {
-    snap.items.forEach(item => {
-      rows.push([snap.date, item.name, item.category, item.price]);
-    });
-  });
+  priceHistory.forEach(snap => snap.items.forEach(item => rows.push([snap.date, item.name, item.category, item.price])));
   const csv = rows.map(r => r.map(v => `"${v}"`).join(',')).join('\n');
-  const blob = new Blob([csv], { type: 'text/csv' });
   const a = document.createElement('a');
-  a.href = URL.createObjectURL(blob);
-  a.download = `ef-commodity-tracker-${new Date().toISOString().split('T')[0]}.csv`;
+  a.href = URL.createObjectURL(new Blob([csv], {type:'text/csv'}));
+  a.download = `ef-commodity-${new Date().toISOString().split('T')[0]}.csv`;
   a.click();
   showToast('CSV exported ✓');
 }
 
-// ── Helpers ──────────────────────────────────────────
-function setUploadStatus(msg) { document.getElementById('uploadStatus').textContent = msg; }
 function showToast(msg) {
   const t = document.getElementById('toast');
-  t.textContent = msg;
-  t.classList.add('show');
+  t.textContent = msg; t.classList.add('show');
   setTimeout(() => t.classList.remove('show'), 3000);
 }
 </script>
