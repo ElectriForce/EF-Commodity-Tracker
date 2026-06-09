@@ -314,28 +314,44 @@ function changePct(curr, prev) {
   return (curr - prev) / prev * 100;
 }
 
+// Pinned items to always show in the metrics cards
+const WATCHED_ITEMS = [
+  { key: 'NM-B 14/2 W/G',               label: '#14/2 Romex'   },
+  { key: 'XHHW-AL-500',                  label: '#500 XHHW AL'  },
+  { key: 'PVC-Sched-40-Conduit-4',       label: '4" PVC'        },
+  { key: 'EMT-3/4',                      label: '3/4" EMT'      },
+  { key: 'EMT-4',                        label: '4" EMT'        },
+  { key: 'GAL-3/4',                      label: '3/4" GRC'      },
+];
+
 function renderMetrics() {
   const section = document.getElementById('metricsSection');
   const snapshots = getRecentSnapshots();
-  if (snapshots.length < 2) { section.hidden = true; return; }
+  if (!snapshots.length) { section.hidden = true; return; }
 
   const latest = snapshots[snapshots.length - 1];
-  const prev   = snapshots[snapshots.length - 2];
+  const prev   = snapshots.length > 1 ? snapshots[snapshots.length - 2] : null;
 
-  const withChange = latest.items.map(item => {
-    const pp = prev.items.find(i => i.name === item.name)?.price ?? null;
-    return { ...item, pct: changePct(item.price, pp) };
-  }).filter(i => i.pct !== null);
-  withChange.sort((a,b) => Math.abs(b.pct) - Math.abs(a.pct));
-  const top = withChange.slice(0, 4);
-  if (!top.length) { section.hidden = true; return; }
+  const cards = WATCHED_ITEMS.map(watched => {
+    const item = latest.items.find(i => i.name === watched.key);
+    if (!item) return null;
+    const pp = prev ? prev.items.find(i => i.name === watched.key)?.price ?? null : null;
+    const pct = changePct(item.price, pp);
+    return { ...item, label: watched.label, pct };
+  }).filter(Boolean);
 
-  document.getElementById('metricsGrid').innerHTML = top.map(item => {
+  if (!cards.length) { section.hidden = true; return; }
+
+  document.getElementById('metricsGrid').innerHTML = cards.map(item => {
     const up = item.pct > 0;
-    return `<div class="metric ${up?'up':'down'}-card">
-      <div class="metric-label">${item.name}</div>
+    const dir = item.pct === null ? '' : (up ? 'up' : 'down');
+    const changeHtml = item.pct === null
+      ? '<div class="metric-change" style="color:var(--gray-400);">No prev data</div>'
+      : `<div class="metric-change ${dir}">${up?'▲':'▼'} ${Math.abs(item.pct).toFixed(1)}% vs prev</div>`;
+    return `<div class="metric ${dir ? dir+'-card' : ''}">
+      <div class="metric-label">${item.label}</div>
       <div class="metric-value">${fmtPrice(item.price)}</div>
-      <div class="metric-change ${up?'up':'down'}">${up?'▲':'▼'} ${Math.abs(item.pct).toFixed(1)}% vs prev</div>
+      ${changeHtml}
     </div>`;
   }).join('');
   section.hidden = false;
