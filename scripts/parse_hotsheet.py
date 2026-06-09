@@ -16,7 +16,7 @@ def parse_pdf(pdf_path: str) -> list:
     print(f"Sending {pdf_path} to Anthropic API...")
     message = client.messages.create(
         model="claude-opus-4-5",
-        max_tokens=4000,
+        max_tokens=8000,
         system="""You are a data extraction assistant. Extract all material prices from this electrical supply hot sheet PDF.
 Return ONLY a JSON array, no markdown, no explanation. Each object must have exactly these fields:
 - "name": string (item name as shown, e.g. "THHN 14 BLK SOL CU")
