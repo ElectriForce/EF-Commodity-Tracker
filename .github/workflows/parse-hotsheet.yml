@@ -1,0 +1,51 @@
+name: Parse Hot Sheet
+
+on:
+  push:
+    paths:
+      - 'inbox/*.pdf'
+
+jobs:
+  parse:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: pip install anthropic
+
+      - name: Find new PDF
+        id: find_pdf
+        run: |
+          PDF=$(ls inbox/*.pdf 2>/dev/null | head -1)
+          if [ -z "$PDF" ]; then
+            echo "No PDF found in inbox/"
+            exit 1
+          fi
+          echo "pdf_path=$PDF" >> $GITHUB_OUTPUT
+          echo "Found: $PDF"
+
+      - name: Parse prices
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          PDF_PATH: ${{ steps.find_pdf.outputs.pdf_path }}
+        run: python scripts/parse_hotsheet.py
+
+      - name: Commit results
+        run: |
+          git config user.name "EF Commodity Tracker"
+          git config user.email "action@github.com"
+          git add data/prices.json
+          git add inbox/
+          DATE=$(date +%Y-%m-%d)
+          git commit -m "Price import $DATE" || echo "Nothing to commit"
+          git push
