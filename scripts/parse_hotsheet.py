@@ -14,39 +14,75 @@ def parse_pdf(pdf_path: str) -> list:
         pdf_data = base64.standard_b64encode(f.read()).decode("utf-8")
 
     print(f"Sending {pdf_path} to Anthropic API...")
-    message = client.messages.create(
+
+    # Use two passes: first get raw text, then extract structured data
+    # Pass 1: extract all text from the PDF
+    text_response = client.messages.create(
         model="claude-opus-4-5",
-        max_tokens=8000,
-        system="""You are a data extraction assistant. Extract all material prices from this electrical supply hot sheet PDF.
-Return ONLY a JSON array, no markdown, no explanation. Each object must have exactly these fields:
-- "name": string (item name as shown, e.g. "THHN 14 BLK SOL CU")
-- "category": string — assign one of: THHN, NM-B, MC Cable, XHHW, EMT, Galv, PVC, IMC, Alum, Fittings, Bare Copper
-- "price": number (numeric value only, no $ sign)
-Do not include any text before or after the JSON array.""",
-        messages=[
-            {
-                "role": "user",
-                "content": [
-                    {
-                        "type": "document",
-                        "source": {
-                            "type": "base64",
-                            "media_type": "application/pdf",
-                            "data": pdf_data,
-                        },
+        max_tokens=4000,
+        messages=[{
+            "role": "user",
+            "content": [
+                {
+                    "type": "document",
+                    "source": {
+                        "type": "base64",
+                        "media_type": "application/pdf",
+                        "data": pdf_data,
                     },
-                    {
-                        "type": "text",
-                        "text": "Extract all items and prices from this hot sheet. Return JSON array only."
-                    }
-                ],
-            }
-        ],
+                },
+                {
+                    "type": "text",
+                    "text": "List every single item and price from this electrical supply price sheet. Format each line exactly as: ITEM NAME | PRICE\nInclude every item. Do not skip any. Do not add any other text."
+                }
+            ],
+        }]
     )
 
-    raw = message.content[0].text.strip()
+    raw_text = text_response.content[0].text.strip()
+    print(f"Got raw text ({len(raw_text)} chars), now structuring...")
+    print(raw_text[:500])
+
+    # Pass 2: structure the extracted text into JSON
+    json_response = client.messages.create(
+        model="claude-opus-4-5",
+        max_tokens=16000,
+        system="""Convert the provided price list into a JSON array. Each object must have exactly:
+- "name": string (item name)
+- "category": one of: THHN, NM-B, MC Cable, XHHW, EMT, Galv, PVC, IMC, Alum, Fittings, Bare Copper
+- "price": number (no $ sign)
+
+Categorize based on item name:
+- THHN → category THHN
+- NM-B → category NM-B  
+- MCA or HCA → category MC Cable
+- XHHW → category XHHW
+- EMT conduit/couplings/connectors/elbows → category EMT
+- GAL → category Galv
+- PVC-Sched → category PVC
+- IMC → category IMC
+- ALU → category Alum
+- Bare or bare copper → category Bare Copper
+- SS COUP, CMP COUP, SS CONN, CMP CONN → category Fittings
+
+Return ONLY the JSON array. No markdown, no explanation, no extra text.""",
+        messages=[{
+            "role": "user",
+            "content": f"Convert this price list to JSON:\n\n{raw_text}"
+        }]
+    )
+
+    raw = json_response.content[0].text.strip()
     clean = raw.replace("```json", "").replace("```", "").strip()
-    items = json.loads(clean)
+
+    # Find the JSON array bounds in case there's any extra text
+    start = clean.find('[')
+    end = clean.rfind(']')
+    if start == -1 or end == -1:
+        raise ValueError(f"No JSON array found in response. Got: {clean[:200]}")
+
+    json_str = clean[start:end+1]
+    items = json.loads(json_str)
     print(f"Extracted {len(items)} items")
     return items
 
@@ -66,7 +102,6 @@ def save_history(history: list):
 
 
 def archive_pdf(pdf_path: str):
-    """Move PDF from inbox/ to inbox/processed/ so it doesn't retrigger"""
     src = Path(pdf_path)
     dest_dir = Path("inbox/processed")
     dest_dir.mkdir(parents=True, exist_ok=True)
@@ -84,14 +119,12 @@ def main():
     items = parse_pdf(PDF_PATH)
 
     history = load_history()
-    # Remove any existing entry for today
     history = [s for s in history if s.get("date") != today]
     history.append({
         "date": today,
         "source": Path(PDF_PATH).name,
         "items": items
     })
-    # Keep sorted by date
     history.sort(key=lambda x: x["date"])
 
     save_history(history)
