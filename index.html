@@ -38,37 +38,37 @@
   .header-title { display: flex; align-items: center; flex: 1; }
   .header-title h1 { font-family: var(--font-display); font-size: 20px; font-weight: normal; color: var(--white); }
   .header-title h1 span { color: var(--yellow); }
-  .header-actions { display: flex; align-items: center; gap: 10px; margin-left: auto; }
-  #lastImport { font-size: 12px; color: var(--gray-400); font-family: var(--font-mono); }
+  .header-actions { display: flex; align-items: center; gap: 8px; margin-left: auto; }
+  #lastImport { font-size: 12px; color: var(--gray-400); font-family: var(--font-mono); margin-right: 4px; }
 
-  .btn { display: inline-flex; align-items: center; gap: 6px; padding: 7px 14px; border-radius: var(--radius); border: 1px solid transparent; font-size: 13px; font-family: var(--font-body); cursor: pointer; transition: opacity 0.15s; text-decoration: none; }
+  .btn { display: inline-flex; align-items: center; gap: 6px; padding: 7px 14px; border-radius: var(--radius); border: 1px solid transparent; font-size: 13px; font-family: var(--font-body); cursor: pointer; transition: opacity 0.15s; text-decoration: none; white-space: nowrap; }
   .btn:hover { opacity: 0.85; }
   .btn-primary { background: var(--yellow); color: var(--black); font-weight: 600; }
   .btn-ghost { background: transparent; color: var(--white); border-color: #444; }
   .btn-sm { padding: 5px 10px; font-size: 12px; }
 
-  /* Info banner */
-  #infoBanner { background: #fff8e1; border-bottom: 1px solid #ffe082; padding: 10px 2rem; font-size: 13px; color: #5a4500; display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
-  #infoBanner.hidden { display: none; }
-  #infoBanner a { color: #7a6200; font-weight: 600; }
+  /* Settings modal */
+  #settingsOverlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.5); z-index: 100; align-items: center; justify-content: center; }
+  #settingsOverlay.open { display: flex; }
+  #settingsModal { background: var(--white); border-radius: var(--radius-lg); padding: 1.5rem; width: 420px; max-width: 90vw; }
+  #settingsModal h2 { font-size: 16px; font-weight: 600; margin-bottom: 1rem; }
+  .field { margin-bottom: 1rem; }
+  .field label { display: block; font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; color: var(--gray-600); margin-bottom: 4px; }
+  .field input { width: 100%; padding: 8px 10px; border: 1px solid var(--gray-200); border-radius: var(--radius); font-family: var(--font-mono); font-size: 13px; }
+  .field input:focus { outline: 2px solid var(--yellow); outline-offset: 1px; }
+  .modal-actions { display: flex; gap: 8px; justify-content: flex-end; margin-top: 1.25rem; }
+
+  /* Upload progress */
+  #uploadProgress { display: none; position: fixed; bottom: 4rem; right: 1.5rem; background: var(--black); color: var(--white); padding: 10px 18px; border-radius: var(--radius); font-size: 13px; z-index: 99; border-left: 3px solid var(--yellow); min-width: 220px; }
+  #uploadProgress.show { display: block; }
+  #uploadProgressText { margin-bottom: 6px; }
+  #uploadProgressBar { height: 3px; background: #333; border-radius: 2px; overflow: hidden; }
+  #uploadProgressFill { height: 100%; background: var(--yellow); border-radius: 2px; transition: width 0.3s; width: 0%; }
 
   main { max-width: 1200px; margin: 0 auto; padding: 1.5rem 2rem 3rem; }
 
-  /* Upload instructions */
-  .upload-card { background: var(--white); border: 1px solid var(--gray-200); border-radius: var(--radius-lg); padding: 1.5rem 2rem; margin-bottom: 1.5rem; display: flex; align-items: flex-start; gap: 1.5rem; }
-  .upload-steps { flex: 1; }
-  .upload-steps h2 { font-size: 14px; font-weight: 600; margin-bottom: 0.75rem; color: var(--gray-600); text-transform: uppercase; letter-spacing: 0.06em; }
-  .steps { display: flex; gap: 1.5rem; flex-wrap: wrap; }
-  .step { display: flex; align-items: flex-start; gap: 10px; flex: 1; min-width: 160px; }
-  .step-num { width: 24px; height: 24px; background: var(--yellow); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 700; color: var(--black); flex-shrink: 0; margin-top: 1px; }
-  .step-text { font-size: 13px; color: var(--gray-600); line-height: 1.4; }
-  .step-text strong { color: var(--black); display: block; margin-bottom: 2px; }
-  .upload-link { display: inline-flex; align-items: center; gap: 6px; background: var(--black); color: var(--yellow); padding: 8px 16px; border-radius: var(--radius); font-size: 13px; font-weight: 600; text-decoration: none; flex-shrink: 0; align-self: center; }
-  .upload-link:hover { opacity: 0.85; }
-
-  /* Refresh banner */
-  #refreshBanner { background: #e8f5ed; border: 1px solid #a8d5b5; border-radius: var(--radius); padding: 10px 1rem; margin-bottom: 1.5rem; font-size: 13px; color: #1a5c2e; display: flex; align-items: center; gap: 10px; }
-  #refreshBanner.hidden { display: none; }
+  #infoBanner { background: #fff8e1; border-bottom: 1px solid #ffe082; padding: 10px 2rem; font-size: 13px; color: #5a4500; display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+  #infoBanner.hidden { display: none; }
 
   .metrics-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 10px; margin-bottom: 1.5rem; }
   .metric { background: var(--white); border-radius: var(--radius); padding: 1rem 1.1rem; border-left: 3px solid var(--gray-200); }
@@ -95,21 +95,22 @@
 
   .table-wrap { overflow-x: auto; }
   table { width: 100%; border-collapse: collapse; font-size: 13px; }
-  thead th { text-align: left; padding: 8px 12px 8px 0; font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em; color: var(--gray-400); border-bottom: 2px solid var(--gray-200); white-space: nowrap; }
-  tbody td { padding: 9px 12px 9px 0; border-bottom: 1px solid var(--gray-100); color: var(--black); vertical-align: middle; }
+  thead th { text-align: left; padding: 8px 10px 8px 0; font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em; color: var(--gray-400); border-bottom: 2px solid var(--gray-200); white-space: nowrap; }
+  tbody td { padding: 8px 10px 8px 0; border-bottom: 1px solid var(--gray-100); color: var(--black); vertical-align: middle; }
   tbody tr:last-child td { border-bottom: none; }
   tbody tr:hover td { background: #fafafa; }
   .item-name { font-weight: 500; }
   .cat-badge { display: inline-block; font-size: 10px; padding: 2px 7px; border-radius: 99px; font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase; }
-  .price-cell { font-family: var(--font-mono); font-size: 13px; }
-  .change-badge { display: inline-flex; align-items: center; gap: 3px; font-size: 11px; font-weight: 600; padding: 2px 8px; border-radius: 99px; }
+  .price-cell { font-family: var(--font-mono); font-size: 12px; }
+  .change-badge { display: inline-flex; align-items: center; gap: 3px; font-size: 11px; font-weight: 600; padding: 2px 7px; border-radius: 99px; white-space: nowrap; }
   .change-badge.up { background: var(--up-bg); color: var(--up); }
   .change-badge.down { background: var(--down-bg); color: var(--down); }
   .change-badge.flat { background: var(--flat-bg); color: var(--flat); }
 
-  #emptyState { text-align: center; padding: 3rem 1rem; color: var(--gray-400); }
-  #emptyState p { font-size: 14px; margin-top: 8px; }
+  /* History columns header highlight */
+  .hist-header { background: #fafafa; }
 
+  #emptyState { text-align: center; padding: 3rem 1rem; color: var(--gray-400); }
   #loadingState { text-align: center; padding: 3rem 1rem; color: var(--gray-400); }
   .spinner { display: inline-block; width: 24px; height: 24px; border: 2px solid var(--gray-200); border-top-color: var(--yellow); border-radius: 50%; animation: spin 0.8s linear infinite; margin-bottom: 8px; }
   @keyframes spin { to { transform: rotate(360deg); } }
@@ -120,8 +121,7 @@
   @media (max-width: 640px) {
     header { padding: 0 1rem; flex-wrap: wrap; }
     main { padding: 1rem; }
-    .upload-card { flex-direction: column; }
-    .steps { flex-direction: column; }
+    .header-actions { gap: 4px; }
   }
   @media (prefers-reduced-motion: reduce) { * { transition: none !important; animation: none !important; } }
   :focus-visible { outline: 2px solid var(--yellow); outline-offset: 2px; }
@@ -145,46 +145,39 @@
     <span id="lastImport" aria-live="polite"></span>
     <button class="btn btn-ghost btn-sm" onclick="exportCSV()">Export CSV</button>
     <button class="btn btn-ghost btn-sm" onclick="loadData()">↻ Refresh</button>
+    <label class="btn btn-primary btn-sm" style="cursor:pointer;" aria-label="Upload hot sheet PDF">
+      ↑ Upload PDF
+      <input type="file" accept=".pdf" id="pdfUploadInput" onchange="handleUpload(event)" style="display:none;" aria-hidden="true" tabindex="-1" />
+    </label>
+    <button class="btn btn-ghost btn-sm" onclick="openSettings()" aria-label="Settings">⚙</button>
   </div>
 </header>
 
-<div id="infoBanner" role="region" aria-label="Status">
-  ⚡ Loading price history from GitHub…
+<div id="infoBanner" class="hidden" role="region" aria-label="Status"></div>
+
+<!-- Settings Modal -->
+<div id="settingsOverlay" role="dialog" aria-modal="true" aria-label="Settings" onclick="if(event.target===this)closeSettings()">
+  <div id="settingsModal">
+    <h2>Settings</h2>
+    <div class="field">
+      <label for="ghTokenInput">GitHub personal access token</label>
+      <input type="password" id="ghTokenInput" placeholder="ghp_..." autocomplete="off" />
+    </div>
+    <p style="font-size:12px; color:var(--gray-400); margin-top:-8px;">Required to upload PDFs directly from this page. Token is stored in your browser only.</p>
+    <div class="modal-actions">
+      <button class="btn btn-ghost btn-sm" style="color:#333; border-color:#ccc;" onclick="closeSettings()">Cancel</button>
+      <button class="btn btn-primary btn-sm" onclick="saveSettings()">Save</button>
+    </div>
+  </div>
+</div>
+
+<!-- Upload progress -->
+<div id="uploadProgress" role="status" aria-live="polite">
+  <div id="uploadProgressText">Uploading…</div>
+  <div id="uploadProgressBar"><div id="uploadProgressFill"></div></div>
 </div>
 
 <main id="main-content">
-
-  <!-- How to import -->
-  <div class="upload-card" role="region" aria-label="How to import a hot sheet">
-    <div class="upload-steps">
-      <h2>Import a new hot sheet</h2>
-      <div class="steps">
-        <div class="step">
-          <div class="step-num" aria-hidden="true">1</div>
-          <div class="step-text"><strong>Go to the repo inbox</strong>Click the button to open GitHub</div>
-        </div>
-        <div class="step">
-          <div class="step-num" aria-hidden="true">2</div>
-          <div class="step-text"><strong>Upload the PDF</strong>Add file → Upload files → drop the hot sheet</div>
-        </div>
-        <div class="step">
-          <div class="step-num" aria-hidden="true">3</div>
-          <div class="step-text"><strong>Commit to main</strong>GitHub Action runs automatically (~30 sec)</div>
-        </div>
-        <div class="step">
-          <div class="step-num" aria-hidden="true">4</div>
-          <div class="step-text"><strong>Refresh this page</strong>New prices and trends appear</div>
-        </div>
-      </div>
-    </div>
-    <a href="https://github.com/ElectriForce/EF-Commodity-Tracker/upload/main/inbox" target="_blank" rel="noopener" class="upload-link" aria-label="Open GitHub inbox folder to upload PDF">
-      Upload PDF →
-    </a>
-  </div>
-
-  <div id="refreshBanner" class="hidden" role="status" aria-live="polite">
-    ✓ Data loaded — showing latest prices
-  </div>
 
   <section aria-label="Price highlights" id="metricsSection" hidden>
     <div class="metrics-grid" id="metricsGrid"></div>
@@ -217,7 +210,7 @@
 
   <div class="card">
     <div class="card-header">
-      <span class="card-title">Latest prices</span>
+      <span class="card-title">Price history — last 5 reports</span>
       <span style="font-size:12px; color:var(--gray-400);" id="itemCount"></span>
     </div>
     <div class="table-wrap">
@@ -228,19 +221,10 @@
       <div id="emptyState" style="display:none;">
         <p style="font-size:32px;">📋</p>
         <p>No price data yet.</p>
-        <p style="margin-top:4px; font-size:12px;">Upload a hot sheet PDF to the inbox folder above to get started.</p>
+        <p style="margin-top:4px; font-size:12px;">Upload a hot sheet PDF using the button above.</p>
       </div>
       <table id="priceTable" hidden aria-label="Material prices">
-        <thead>
-          <tr>
-            <th scope="col">Item</th>
-            <th scope="col">Category</th>
-            <th scope="col">Current price</th>
-            <th scope="col">Prev week</th>
-            <th scope="col">Change</th>
-            <th scope="col">Date</th>
-          </tr>
-        </thead>
+        <thead id="priceTableHead"></thead>
         <tbody id="priceTableBody"></tbody>
       </table>
     </div>
@@ -255,10 +239,12 @@
 const GITHUB_OWNER = 'ElectriForce';
 const GITHUB_REPO  = 'EF-Commodity-Tracker';
 const DATA_URL     = `https://raw.githubusercontent.com/${GITHUB_OWNER}/${GITHUB_REPO}/main/data/prices.json`;
+const HISTORY_COUNT = 5;
 
 let priceHistory = [];
 let currentFilter = 'all';
 let trendChart = null;
+let ghToken = localStorage.getItem('ef_gh_token') || '';
 
 const catColors = {
   'THHN':'#1a6bb5','NM-B':'#7b3fa0','MC Cable':'#b56a1a',
@@ -267,41 +253,34 @@ const catColors = {
   'Fittings':'#7a5a3a','Bare Copper':'#c47a1a'
 };
 
-window.addEventListener('DOMContentLoaded', loadData);
+window.addEventListener('DOMContentLoaded', () => {
+  if (ghToken) document.getElementById('ghTokenInput').value = ghToken;
+  loadData();
+});
 
+// ── Data loading ─────────────────────────────────────
 async function loadData() {
-  setInfo('Loading price history…');
+  setInfo('Loading…', true);
   document.getElementById('loadingState').style.display = 'block';
   document.getElementById('emptyState').style.display = 'none';
   document.getElementById('priceTable').hidden = true;
-
   try {
     const res = await fetch(DATA_URL + '?t=' + Date.now());
-    if (res.status === 404) {
-      priceHistory = [];
-      setInfo('No price data yet — upload a hot sheet to get started.', false);
-      showEmpty();
-      return;
-    }
+    if (res.status === 404) { priceHistory = []; showEmpty(); setInfo('', false); return; }
     if (!res.ok) throw new Error(`HTTP ${res.status}`);
     priceHistory = await res.json();
     renderAll();
     setInfo('', false);
-    const banner = document.getElementById('refreshBanner');
-    banner.classList.remove('hidden');
-    setTimeout(() => banner.classList.add('hidden'), 3000);
   } catch(e) {
-    setInfo('Could not load data — check your connection.', false);
+    setInfo('Could not load data — check connection', true);
     showEmpty();
-    console.error(e);
   }
 }
 
-function setInfo(msg, show = true) {
+function setInfo(msg, show) {
   const b = document.getElementById('infoBanner');
   b.textContent = msg ? '⚡ ' + msg : '';
-  b.classList.toggle('hidden', !show && !msg);
-  if (!msg) b.classList.add('hidden');
+  b.classList.toggle('hidden', !show);
 }
 
 function showEmpty() {
@@ -310,54 +289,63 @@ function showEmpty() {
   document.getElementById('priceTable').hidden = true;
 }
 
+// ── Render ───────────────────────────────────────────
 function renderAll() {
   if (!priceHistory.length) { showEmpty(); return; }
   const latest = priceHistory[priceHistory.length - 1];
-  const prev   = priceHistory.length > 1 ? priceHistory[priceHistory.length - 2] : null;
-
-  document.getElementById('lastImport').textContent = `Last import: ${latest.date}`;
-  renderMetrics(latest, prev);
-  renderTable(latest, prev);
+  document.getElementById('lastImport').textContent = `Last: ${latest.date}`;
+  renderMetrics();
+  renderTable();
   renderChart();
 }
 
-function getPrevPrice(item, prevSnap) {
-  if (!prevSnap) return null;
-  const m = prevSnap.items.find(i => i.name === item.name);
-  return m ? m.price : null;
+// Get last N snapshots
+function getRecentSnapshots() {
+  return priceHistory.slice(-HISTORY_COUNT);
 }
-function changePct(curr, prev) {
-  if (prev === null || prev === 0) return null;
-  return (curr - prev) / prev * 100;
-}
+
 function fmtPrice(n) {
+  if (n == null) return '—';
   return '$' + n.toLocaleString('en-US', {minimumFractionDigits:2, maximumFractionDigits:2});
 }
 
-function renderMetrics(latest, prev) {
+function changePct(curr, prev) {
+  if (prev == null || prev === 0) return null;
+  return (curr - prev) / prev * 100;
+}
+
+function renderMetrics() {
   const section = document.getElementById('metricsSection');
+  const snapshots = getRecentSnapshots();
+  if (snapshots.length < 2) { section.hidden = true; return; }
+
+  const latest = snapshots[snapshots.length - 1];
+  const prev   = snapshots[snapshots.length - 2];
+
   const withChange = latest.items.map(item => {
-    const pp = getPrevPrice(item, prev);
-    return { ...item, prevPrice: pp, pct: changePct(item.price, pp) };
+    const pp = prev.items.find(i => i.name === item.name)?.price ?? null;
+    return { ...item, pct: changePct(item.price, pp) };
   }).filter(i => i.pct !== null);
   withChange.sort((a,b) => Math.abs(b.pct) - Math.abs(a.pct));
   const top = withChange.slice(0, 4);
   if (!top.length) { section.hidden = true; return; }
+
   document.getElementById('metricsGrid').innerHTML = top.map(item => {
     const up = item.pct > 0;
-    const dir = up ? 'up' : 'down';
-    return `<div class="metric ${dir}-card">
+    return `<div class="metric ${up?'up':'down'}-card">
       <div class="metric-label">${item.name}</div>
       <div class="metric-value">${fmtPrice(item.price)}</div>
-      <div class="metric-change ${dir}" aria-label="${Math.abs(item.pct).toFixed(1)}% ${up?'increase':'decrease'}">
-        ${up?'▲':'▼'} ${Math.abs(item.pct).toFixed(1)}% vs prev week
-      </div>
+      <div class="metric-change ${up?'up':'down'}">${up?'▲':'▼'} ${Math.abs(item.pct).toFixed(1)}% vs prev</div>
     </div>`;
   }).join('');
   section.hidden = false;
 }
 
-function renderTable(latest, prev) {
+function renderTable() {
+  const snapshots = getRecentSnapshots();
+  if (!snapshots.length) { showEmpty(); return; }
+
+  const latest = snapshots[snapshots.length - 1];
   let items = latest.items;
   if (currentFilter !== 'all') items = items.filter(i => i.category === currentFilter);
   document.getElementById('itemCount').textContent = `${items.length} items`;
@@ -367,23 +355,48 @@ function renderTable(latest, prev) {
   document.getElementById('emptyState').style.display = 'none';
   document.getElementById('priceTable').hidden = false;
 
+  // Build headers — item, category, then one column per snapshot date (newest last = right)
+  const thead = document.getElementById('priceTableHead');
+  const dateHeaders = snapshots.map(s =>
+    `<th scope="col" class="price-cell hist-header">${s.date}</th>`
+  ).join('');
+  thead.innerHTML = `<tr>
+    <th scope="col">Item</th>
+    <th scope="col">Category</th>
+    ${dateHeaders}
+    <th scope="col">Change</th>
+  </tr>`;
+
+  // Build rows
   document.getElementById('priceTableBody').innerHTML = items.map(item => {
-    const pp = getPrevPrice(item, prev);
-    const pct = changePct(item.price, pp);
-    let badge = '<span class="change-badge flat" aria-label="No previous data">—</span>';
-    if (pct !== null) {
-      const up = pct > 0;
-      const abs = Math.abs(pct).toFixed(1);
-      badge = `<span class="change-badge ${up?'up':'down'}" aria-label="${abs}% ${up?'increase':'decrease'}">${up?'▲':'▼'} ${abs}%</span>`;
-    }
     const color = catColors[item.category] || '#888';
+    const catBadge = `<span class="cat-badge" style="background:${color}18; color:${color};">${item.category}</span>`;
+
+    const priceCells = snapshots.map((snap, idx) => {
+      const found = snap.items.find(i => i.name === item.name);
+      const price = found ? found.price : null;
+      // Highlight latest column
+      const isLatest = idx === snapshots.length - 1;
+      const style = isLatest ? 'font-weight:600;' : 'color:var(--gray-400);';
+      return `<td class="price-cell" style="${style}">${fmtPrice(price)}</td>`;
+    }).join('');
+
+    // Change from oldest available to latest
+    const prices = snapshots.map(s => s.items.find(i => i.name === item.name)?.price ?? null).filter(p => p !== null);
+    let changeBadge = '<span class="change-badge flat">—</span>';
+    if (prices.length >= 2) {
+      const pct = changePct(prices[prices.length-1], prices[prices.length-2]);
+      if (pct !== null) {
+        const up = pct > 0;
+        changeBadge = `<span class="change-badge ${up?'up':'down'}">${up?'▲':'▼'} ${Math.abs(pct).toFixed(1)}%</span>`;
+      }
+    }
+
     return `<tr>
       <td class="item-name">${item.name}</td>
-      <td><span class="cat-badge" style="background:${color}18; color:${color};">${item.category}</span></td>
-      <td class="price-cell">${fmtPrice(item.price)}</td>
-      <td class="price-cell" style="color:var(--gray-400);">${pp !== null ? fmtPrice(pp) : '—'}</td>
-      <td>${badge}</td>
-      <td style="color:var(--gray-400); font-family:var(--font-mono); font-size:12px;">${latest.date}</td>
+      <td>${catBadge}</td>
+      ${priceCells}
+      <td>${changeBadge}</td>
     </tr>`;
   }).join('');
 }
@@ -397,8 +410,7 @@ function renderChart() {
   const variance = allNames.map(name => {
     const prices = priceHistory.map(s => s.items.find(i => i.name === name)?.price).filter(Boolean);
     if (prices.length < 2) return { name, v: 0 };
-    const mn = Math.min(...prices), mx = Math.max(...prices);
-    return { name, v: (mx - mn) / mn };
+    return { name, v: (Math.max(...prices) - Math.min(...prices)) / Math.min(...prices) };
   });
   variance.sort((a,b) => b.v - a.v);
   const tracked = variance.slice(0, 5).map(x => x.name);
@@ -407,13 +419,6 @@ function renderChart() {
   const dashes = [[], [6,3], [2,2], [8,3], [4,2]];
   const labels = priceHistory.map(s => s.date);
 
-  const datasets = tracked.map((name, i) => ({
-    label: name,
-    data: priceHistory.map(s => s.items.find(it => it.name === name)?.price ?? null),
-    borderColor: colors[i], backgroundColor: 'transparent',
-    tension: 0.3, pointRadius: 4, borderDash: dashes[i], spanGaps: true
-  }));
-
   document.getElementById('chartLegend').innerHTML = tracked.map((name, i) =>
     `<span class="legend-item"><span class="legend-swatch" style="background:${colors[i]};"></span>${name}</span>`
   ).join('');
@@ -421,7 +426,15 @@ function renderChart() {
   if (trendChart) trendChart.destroy();
   trendChart = new Chart(document.getElementById('trendChart'), {
     type: 'line',
-    data: { labels, datasets },
+    data: {
+      labels,
+      datasets: tracked.map((name, i) => ({
+        label: name,
+        data: priceHistory.map(s => s.items.find(it => it.name === name)?.price ?? null),
+        borderColor: colors[i], backgroundColor: 'transparent',
+        tension: 0.3, pointRadius: 4, borderDash: dashes[i], spanGaps: true
+      }))
+    },
     options: {
       responsive: true, maintainAspectRatio: false,
       plugins: { legend: { display: false } },
@@ -433,17 +446,99 @@ function renderChart() {
   });
 }
 
+// ── Filter ───────────────────────────────────────────
 function filterCat(btn, cat) {
   document.querySelectorAll('.pill').forEach(p => { p.classList.remove('active'); p.setAttribute('aria-pressed','false'); });
   btn.classList.add('active'); btn.setAttribute('aria-pressed','true');
   currentFilter = cat;
-  if (priceHistory.length) {
-    const latest = priceHistory[priceHistory.length-1];
-    const prev = priceHistory.length > 1 ? priceHistory[priceHistory.length-2] : null;
-    renderTable(latest, prev);
+  if (priceHistory.length) renderTable();
+}
+
+// ── Upload PDF to GitHub inbox ───────────────────────
+async function handleUpload(e) {
+  const file = e.target.files[0];
+  if (!file) return;
+  e.target.value = ''; // reset so same file can be re-uploaded
+
+  if (!ghToken) {
+    openSettings();
+    showToast('Enter your GitHub token in Settings first');
+    return;
+  }
+
+  setProgress('Uploading PDF to GitHub…', 20);
+
+  try {
+    const base64 = await fileToBase64(file);
+    const path = `inbox/${file.name}`;
+
+    // Check if file already exists (need SHA to overwrite)
+    let sha = null;
+    const check = await fetch(`https://api.github.com/repos/${GITHUB_OWNER}/${GITHUB_REPO}/contents/${path}`, {
+      headers: { Authorization: `token ${ghToken}`, Accept: 'application/vnd.github.v3+json' }
+    });
+    if (check.ok) { const j = await check.json(); sha = j.sha; }
+
+    setProgress('Committing to inbox…', 50);
+
+    const body = {
+      message: `Hot sheet upload: ${file.name}`,
+      content: base64
+    };
+    if (sha) body.sha = sha;
+
+    const res = await fetch(`https://api.github.com/repos/${GITHUB_OWNER}/${GITHUB_REPO}/contents/${path}`, {
+      method: 'PUT',
+      headers: { Authorization: `token ${ghToken}`, Accept: 'application/vnd.github.v3+json', 'Content-Type': 'application/json' },
+      body: JSON.stringify(body)
+    });
+
+    if (!res.ok) {
+      const err = await res.json();
+      throw new Error(err.message || `GitHub error ${res.status}`);
+    }
+
+    setProgress('PDF uploaded — GitHub Action running (~45 sec)…', 90);
+    setTimeout(() => hideProgress(), 8000);
+    showToast('Uploaded ✓ — hit Refresh in ~45 seconds');
+
+  } catch(e) {
+    hideProgress();
+    showToast('Upload failed: ' + e.message);
+    console.error(e);
   }
 }
 
+function fileToBase64(file) {
+  return new Promise((resolve, reject) => {
+    const r = new FileReader();
+    r.onload = () => resolve(r.result.split(',')[1]);
+    r.onerror = () => reject(new Error('File read failed'));
+    r.readAsDataURL(file);
+  });
+}
+
+function setProgress(msg, pct) {
+  document.getElementById('uploadProgressText').textContent = msg;
+  document.getElementById('uploadProgressFill').style.width = pct + '%';
+  document.getElementById('uploadProgress').classList.add('show');
+}
+function hideProgress() { document.getElementById('uploadProgress').classList.remove('show'); }
+
+// ── Settings ─────────────────────────────────────────
+function openSettings() { document.getElementById('settingsOverlay').classList.add('open'); }
+function closeSettings() { document.getElementById('settingsOverlay').classList.remove('open'); }
+function saveSettings() {
+  const val = document.getElementById('ghTokenInput').value.trim();
+  if (val && !val.startsWith('ghp_')) { showToast('Token should start with ghp_'); return; }
+  ghToken = val;
+  if (val) localStorage.setItem('ef_gh_token', val);
+  else localStorage.removeItem('ef_gh_token');
+  closeSettings();
+  showToast(val ? 'Token saved ✓' : 'Token cleared');
+}
+
+// ── Export ───────────────────────────────────────────
 function exportCSV() {
   if (!priceHistory.length) { showToast('No data to export yet'); return; }
   const rows = [['Date','Item','Category','Price']];
@@ -459,7 +554,7 @@ function exportCSV() {
 function showToast(msg) {
   const t = document.getElementById('toast');
   t.textContent = msg; t.classList.add('show');
-  setTimeout(() => t.classList.remove('show'), 3000);
+  setTimeout(() => t.classList.remove('show'), 3500);
 }
 </script>
 </body>
