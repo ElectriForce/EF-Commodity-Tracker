@@ -1,167 +1,167 @@
 [
   {
     "date": "2026-06-09",
-    "source": "6-2-26 CUSTOMER HOTSHEET.pdf",
+    "source": "5-5-26 CUSTOMER HOTSHEET.pdf",
     "items": [
       {
         "name": "THHN 14 BLK SOL CU",
         "category": "THHN",
-        "price": 149.75
+        "price": 138.38
       },
       {
         "name": "THHN 14 BLK 19STR CU",
         "category": "THHN",
-        "price": 166.63
+        "price": 153.88
       },
       {
         "name": "THHN 12 BLK SOL CU",
         "category": "THHN",
-        "price": 229.75
+        "price": 212.13
       },
       {
         "name": "THHN 12 BLK 19STR CU",
         "category": "THHN",
-        "price": 246.13
+        "price": 227.25
       },
       {
         "name": "THHN 10 BLK SOL CU",
         "category": "THHN",
-        "price": 359.5
+        "price": 332.13
       },
       {
         "name": "THHN 10 BLK 19STR CU",
         "category": "THHN",
-        "price": 376.36
+        "price": 347.75
       },
       {
         "name": "THHN 8 BK 19STR CU",
         "category": "THHN",
-        "price": 698.75
+        "price": 645.5
       },
       {
         "name": "THHN 6 BLK 19STR CU",
         "category": "THHN",
-        "price": 1075.13
+        "price": 993.13
       },
       {
         "name": "THHN 4 BLK 19STR CU",
         "category": "THHN",
-        "price": 1645.25
+        "price": 1519.75
       },
       {
         "name": "THHN 3 BLK 19STR CU",
         "category": "THHN",
-        "price": 2075.25
+        "price": 1916.88
       },
       {
         "name": "THHN 2 BLK 19STR CU",
         "category": "THHN",
-        "price": 2597.49
+        "price": 2399.25
       },
       {
         "name": "THHN 1 BLK 19STR CU",
         "category": "THHN",
-        "price": 2977.13
+        "price": 2750.0
       },
       {
         "name": "THHN 1/0 BLK 19STR CU",
         "category": "THHN",
-        "price": 3645.0
+        "price": 3366.88
       },
       {
         "name": "THHN 2/0 BLK 19STR CU",
         "category": "THHN",
-        "price": 4490.0
+        "price": 4147.25
       },
       {
         "name": "THHN 3/0 BLK 19STR CU",
         "category": "THHN",
-        "price": 5666.61
+        "price": 5234.0
       },
       {
         "name": "THHN 4/0 BLK 19STR CU",
         "category": "THHN",
-        "price": 7073.25
+        "price": 6533.5
       },
       {
         "name": "THHN 250 BLK 37STR CU",
         "category": "THHN",
-        "price": 8196.25
+        "price": 7570.63
       },
       {
         "name": "THHN 300 BLK 37STR CU",
         "category": "THHN",
-        "price": 9829.25
+        "price": 9079.13
       },
       {
         "name": "THHN 350 BLK 37STR CU",
         "category": "THHN",
-        "price": 11509.25
+        "price": 10630.63
       },
       {
         "name": "THHN 400 BLK 37STR CU",
         "category": "THHN",
-        "price": 13092.38
+        "price": 12093.0
       },
       {
         "name": "THHN 500 BLK 37STR CU",
         "category": "THHN",
-        "price": 16543.13
+        "price": 15280.38
       },
       {
         "name": "THHN 600 BLK 61STR CU",
         "category": "THHN",
-        "price": 20493.63
+        "price": 18929.38
       },
       {
         "name": "THHN 750 BLK 61STR CU",
         "category": "THHN",
-        "price": 34846.0
+        "price": 32186.25
       },
       {
         "name": "MCA 14/2 WG 250",
         "category": "MC Cable",
-        "price": 817.14
+        "price": 751.17
       },
       {
         "name": "MCA 14/3 WG 250",
         "category": "MC Cable",
-        "price": 1363.25
+        "price": 1253.25
       },
       {
         "name": "MCA 14/4 WG 250",
         "category": "MC Cable",
-        "price": 1900.39
+        "price": 1747.14
       },
       {
         "name": "MCA 12/2 WG 250",
         "category": "MC Cable",
-        "price": 819.74
+        "price": 753.62
       },
       {
         "name": "MCA 12/3 WG 250",
         "category": "MC Cable",
-        "price": 1447.4
+        "price": 1330.65
       },
       {
         "name": "MCA 12/4 WG 250",
         "category": "MC Cable",
-        "price": 2040.91
+        "price": 1876.23
       },
       {
         "name": "MCA 10/2 WG 250",
         "category": "MC Cable",
-        "price": 1871.82
+        "price": 1720.78
       },
       {
         "name": "MCA 10/3 WG 250",
         "category": "MC Cable",
-        "price": 2623.12
+        "price": 2411.56
       },
       {
         "name": "MCA 10/4 WG 250",
         "category": "MC Cable",
-        "price": 4118.18
+        "price": 3785.97
       },
       {
         "name": "HCA 14/2 WG 250",
@@ -181,192 +181,192 @@
       {
         "name": "XHHW 12 BLK 19STR CU",
         "category": "XHHW",
-        "price": 330.5
+        "price": 305.0
       },
       {
         "name": "XHHW 10 BLK 19STR CU",
         "category": "XHHW",
-        "price": 498.25
+        "price": 460.0
       },
       {
         "name": "XHHW 8 BK 19STR CU",
         "category": "XHHW",
-        "price": 782.5
+        "price": 733.38
       },
       {
         "name": "XHHW 6 BLK 19STR CU",
         "category": "XHHW",
-        "price": 1194.88
+        "price": 1102.88
       },
       {
         "name": "XHHW 4 BLK 19STR CU",
         "category": "XHHW",
-        "price": 1812.5
+        "price": 1673.0
       },
       {
         "name": "XHHW 3 BLK 19STR CU",
         "category": "XHHW",
-        "price": 2229.38
+        "price": 2057.88
       },
       {
         "name": "XHHW 2 BLK 19STR CU",
         "category": "XHHW",
-        "price": 2836.63
+        "price": 2618.5
       },
       {
         "name": "XHHW 1/0 BLK 19STR CU",
         "category": "XHHW",
-        "price": 3830.63
+        "price": 3535.88
       },
       {
         "name": "XHHW 2/0 BLK 19STR CU",
         "category": "XHHW",
-        "price": 4785.75
+        "price": 4417.5
       },
       {
         "name": "XHHW 4/0 BLK 19STR CU",
         "category": "XHHW",
-        "price": 7513.13
+        "price": 6935.13
       },
       {
         "name": "XHHW 250 BLK 37STR CU",
         "category": "XHHW",
-        "price": 8747.88
+        "price": 8075.0
       },
       {
         "name": "XHHW 350 BLK 37STR CU",
         "category": "XHHW",
-        "price": 12151.0
+        "price": 11216.25
       },
       {
         "name": "XHHW 500 BLK 37STR CU",
         "category": "XHHW",
-        "price": 17284.38
+        "price": 15954.88
       },
       {
         "name": "XHHW 600 BLK 61STR CU",
         "category": "XHHW",
-        "price": 21825.63
-      },
-      {
-        "name": "XHHW-AL-6",
-        "category": "XHHW",
-        "price": 298.13
-      },
-      {
-        "name": "XHHW-AL-4",
-        "category": "XHHW",
-        "price": 374.49
-      },
-      {
-        "name": "XHHW-AL-2",
-        "category": "XHHW",
-        "price": 468.75
-      },
-      {
-        "name": "XHHW-AL-1",
-        "category": "XHHW",
-        "price": 659.88
-      },
-      {
-        "name": "XHHW-AL-1/0",
-        "category": "XHHW",
-        "price": 729.99
-      },
-      {
-        "name": "XHHW-AL-2/0",
-        "category": "XHHW",
-        "price": 862.5
-      },
-      {
-        "name": "XHHW-AL-3/0",
-        "category": "XHHW",
-        "price": 1070.13
-      },
-      {
-        "name": "XHHW-AL-4/0",
-        "category": "XHHW",
-        "price": 1195.0
-      },
-      {
-        "name": "XHHW-AL-250",
-        "category": "XHHW",
-        "price": 1499.5
-      },
-      {
-        "name": "XHHW-AL-300",
-        "category": "XHHW",
-        "price": 2048.5
-      },
-      {
-        "name": "XHHW-AL-350",
-        "category": "XHHW",
-        "price": 2116.11
-      },
-      {
-        "name": "XHHW-AL-400",
-        "category": "XHHW",
-        "price": 2391.38
-      },
-      {
-        "name": "XHHW-AL-500",
-        "category": "XHHW",
-        "price": 2646.11
-      },
-      {
-        "name": "XHHW-AL-600",
-        "category": "XHHW",
-        "price": 3378.75
-      },
-      {
-        "name": "XHHW-AL-700",
-        "category": "XHHW",
-        "price": 3867.88
-      },
-      {
-        "name": "XHHW-AL-750",
-        "category": "XHHW",
-        "price": 3913.75
-      },
-      {
-        "name": "XHHW-AL-1000",
-        "category": "XHHW",
-        "price": 6898.75
+        "price": 20146.63
       },
       {
         "name": "NM-B 14/2 W/G",
         "category": "NM-B",
-        "price": 399.0
+        "price": 374.25
       },
       {
         "name": "NM-B 14/3 W/G",
         "category": "NM-B",
-        "price": 531.25
+        "price": 498.38
       },
       {
         "name": "NM-B 12/2 W/G",
         "category": "NM-B",
-        "price": 591.0
+        "price": 554.38
       },
       {
         "name": "NM-B 12/3 W/G",
         "category": "NM-B",
-        "price": 810.74
+        "price": 760.5
       },
       {
         "name": "NM-B 10/2 W/G",
         "category": "NM-B",
-        "price": 1031.13
+        "price": 967.25
       },
       {
         "name": "NM-B 10/3 W/G",
         "category": "NM-B",
-        "price": 1283.86
+        "price": 1204.38
       },
       {
         "name": "NM-B 8/2 W/G",
         "category": "NM-B",
-        "price": 1757.63
+        "price": 1648.63
+      },
+      {
+        "name": "XHHW-AL-6",
+        "category": "Alum",
+        "price": 298.13
+      },
+      {
+        "name": "XHHW-AL-4",
+        "category": "Alum",
+        "price": 374.49
+      },
+      {
+        "name": "XHHW-AL-2",
+        "category": "Alum",
+        "price": 468.75
+      },
+      {
+        "name": "XHHW-AL-1",
+        "category": "Alum",
+        "price": 659.88
+      },
+      {
+        "name": "XHHW-AL-1/0",
+        "category": "Alum",
+        "price": 729.99
+      },
+      {
+        "name": "XHHW-AL-2/0",
+        "category": "Alum",
+        "price": 862.5
+      },
+      {
+        "name": "XHHW-AL-3/0",
+        "category": "Alum",
+        "price": 1070.13
+      },
+      {
+        "name": "XHHW-AL-4/0",
+        "category": "Alum",
+        "price": 1195.0
+      },
+      {
+        "name": "XHHW-AL-250",
+        "category": "Alum",
+        "price": 1499.5
+      },
+      {
+        "name": "XHHW-AL-300",
+        "category": "Alum",
+        "price": 2048.5
+      },
+      {
+        "name": "XHHW-AL-350",
+        "category": "Alum",
+        "price": 2116.11
+      },
+      {
+        "name": "XHHW-AL-400",
+        "category": "Alum",
+        "price": 2391.38
+      },
+      {
+        "name": "XHHW-AL-500",
+        "category": "Alum",
+        "price": 2646.11
+      },
+      {
+        "name": "XHHW-AL-600",
+        "category": "Alum",
+        "price": 3378.75
+      },
+      {
+        "name": "XHHW-AL-700",
+        "category": "Alum",
+        "price": 3867.88
+      },
+      {
+        "name": "XHHW-AL-750",
+        "category": "Alum",
+        "price": 3913.75
+      },
+      {
+        "name": "XHHW-AL-1000",
+        "category": "Alum",
+        "price": 6898.75
       },
       {
         "name": "8-Solid Bare",
@@ -391,62 +391,62 @@
       {
         "name": "PVC-Sched-40-Conduit-1/2",
         "category": "PVC",
-        "price": 31.76
+        "price": 29.75
       },
       {
         "name": "PVC-Sched-40-Conduit-3/4",
         "category": "PVC",
-        "price": 38.15
+        "price": 35.75
       },
       {
         "name": "PVC-Sched-40-Conduit-1",
         "category": "PVC",
-        "price": 55.68
+        "price": 52.16
       },
       {
         "name": "PVC-Sched-40-Conduit-1-1/4",
         "category": "PVC",
-        "price": 80.19
+        "price": 75.09
       },
       {
         "name": "PVC-Sched-40-Conduit-1-1/2",
         "category": "PVC",
-        "price": 92.96
+        "price": 87.07
       },
       {
         "name": "PVC-Sched-40-Conduit-2",
         "category": "PVC",
-        "price": 115.96
+        "price": 108.61
       },
       {
         "name": "PVC-Sched-40-Conduit-2-1/2",
         "category": "PVC",
-        "price": 181.75
+        "price": 170.23
       },
       {
         "name": "PVC-Sched-40-Conduit-3",
         "category": "PVC",
-        "price": 221.99
+        "price": 207.93
       },
       {
         "name": "PVC-Sched-40-Conduit-3-1/2",
         "category": "PVC",
-        "price": 283.16
+        "price": 265.21
       },
       {
         "name": "PVC-Sched-40-Conduit-4",
         "category": "PVC",
-        "price": 306.08
+        "price": 286.69
       },
       {
         "name": "PVC-Sched-40-Conduit-5",
         "category": "PVC",
-        "price": 432.33
+        "price": 404.95
       },
       {
         "name": "PVC-Sched-40-Conduit-6",
         "category": "PVC",
-        "price": 565.45
+        "price": 529.63
       },
       {
         "name": "EMT-1/2",
@@ -559,52 +559,52 @@
         "price": 7624.84
       },
       {
-        "name": "EMT-1/2",
+        "name": "EMT-1/2 COLORS",
         "category": "EMT",
         "price": 66.53
       },
       {
-        "name": "EMT-3/4",
+        "name": "EMT-3/4 COLORS",
         "category": "EMT",
         "price": 114.17
       },
       {
-        "name": "EMT-1",
+        "name": "EMT-1 COLORS",
         "category": "EMT",
         "price": 194.52
       },
       {
-        "name": "EMT-1-1/4",
+        "name": "EMT-1-1/4 COLORS",
         "category": "EMT",
         "price": 379.15
       },
       {
-        "name": "EMT-1-1/2",
+        "name": "EMT-1-1/2 COLORS",
         "category": "EMT",
         "price": 469.12
       },
       {
-        "name": "EMT-2",
+        "name": "EMT-2 COLORS",
         "category": "EMT",
         "price": 589.83
       },
       {
-        "name": "EMT-2-1/2",
+        "name": "EMT-2-1/2 COLORS",
         "category": "EMT",
         "price": 908.85
       },
       {
-        "name": "EMT-3",
+        "name": "EMT-3 COLORS",
         "category": "EMT",
         "price": 1105.48
       },
       {
-        "name": "EMT-3-1/2",
+        "name": "EMT-3-1/2 COLORS",
         "category": "EMT",
         "price": 1476.03
       },
       {
-        "name": "EMT-4",
+        "name": "EMT-4 COLORS",
         "category": "EMT",
         "price": 1522.12
       },
@@ -671,7 +671,7 @@
       {
         "name": "ALU-1",
         "category": "Alum",
-        "price": 343.68
+        "price": 336.81
       },
       {
         "name": "ALU-1-1/4",
@@ -681,7 +681,7 @@
       {
         "name": "ALU-1-1/2",
         "category": "Alum",
-        "price": 559.35
+        "price": 548.16
       },
       {
         "name": "ALU-2",
