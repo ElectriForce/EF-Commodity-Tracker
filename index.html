@@ -8,8 +8,8 @@
   :root {
     --black: #0f0f0f;
     --white: #ffffff;
-    --yellow: #f5c400;
-    --yellow-dim: #7a6200;
+    --yellow: #cc2222;
+    --yellow-dim: #8a0000;
     --gray-100: #f4f4f4;
     --gray-200: #e8e8e8;
     --gray-400: #a0a0a0;
@@ -135,7 +135,6 @@
     <div class="brand-mark" aria-hidden="true">EF</div>
     <div class="brand-text">
       <div class="brand-name">ElectriForce</div>
-      <div class="brand-sub">OIB Projects</div>
     </div>
   </div>
   <div class="header-title">
@@ -200,7 +199,7 @@
 
   <div class="card" id="chartCard" hidden>
     <div class="card-header">
-      <span class="card-title">Price trend — most volatile items</span>
+      <span class="card-title">Price trend — last 24 reports</span>
       <div class="legend" id="chartLegend" aria-label="Chart legend"></div>
     </div>
     <div style="position:relative; width:100%; height:280px;">
@@ -240,6 +239,7 @@ const GITHUB_OWNER = 'ElectriForce';
 const GITHUB_REPO  = 'EF-Commodity-Tracker';
 const DATA_URL     = `https://raw.githubusercontent.com/${GITHUB_OWNER}/${GITHUB_REPO}/main/data/prices.json`;
 const HISTORY_COUNT = 5;
+const CHART_COUNT = 24;
 
 let priceHistory = [];
 let currentFilter = 'all';
@@ -316,12 +316,13 @@ function changePct(curr, prev) {
 
 // Pinned items to always show in the metrics cards
 const WATCHED_ITEMS = [
-  { key: 'NM-B 14/2 W/G',               label: '#14/2 Romex'   },
-  { key: 'XHHW-AL-500',                  label: '#500 XHHW AL'  },
-  { key: 'PVC-Sched-40-Conduit-4',       label: '4" PVC'        },
-  { key: 'EMT-3/4',                      label: '3/4" EMT'      },
-  { key: 'EMT-4',                        label: '4" EMT'        },
-  { key: 'GAL-3/4',                      label: '3/4" GRC'      },
+  { key: 'NM-B 12/2 W/G',               label: '#12/2 Romex'   },
+  { key: 'MCA 12/2 WG 250',             label: '#12/2 MC'      },
+  { key: 'XHHW-AL-500',                 label: '#500 XHHW AL'  },
+  { key: 'XHHW-AL-600',                 label: '#600 XHHW AL'  },
+  { key: 'EMT-3/4',                     label: '3/4" EMT'      },
+  { key: 'PVC-Sched-40-Conduit-3/4',    label: '3/4" PVC'      },
+  { key: 'PVC-Sched-40-Conduit-4',      label: '4" PVC'        },
 ];
 
 function renderMetrics() {
@@ -384,20 +385,21 @@ function renderTable() {
   </tr>`;
 
   // Build rows
+  const watchedKeys = new Set(WATCHED_ITEMS.map(w => w.key));
   document.getElementById('priceTableBody').innerHTML = items.map(item => {
+    const isWatched = watchedKeys.has(item.name);
+    const watchedDef = isWatched ? WATCHED_ITEMS.find(w => w.key === item.name) : null;
     const color = catColors[item.category] || '#888';
     const catBadge = `<span class="cat-badge" style="background:${color}18; color:${color};">${item.category}</span>`;
 
     const priceCells = snapshots.map((snap, idx) => {
       const found = snap.items.find(i => i.name === item.name);
       const price = found ? found.price : null;
-      // Highlight latest column
       const isLatest = idx === snapshots.length - 1;
       const style = isLatest ? 'font-weight:600;' : 'color:var(--gray-400);';
       return `<td class="price-cell" style="${style}">${fmtPrice(price)}</td>`;
     }).join('');
 
-    // Change from oldest available to latest
     const prices = snapshots.map(s => s.items.find(i => i.name === item.name)?.price ?? null).filter(p => p !== null);
     let changeBadge = '<span class="change-badge flat">—</span>';
     if (prices.length >= 2) {
@@ -408,8 +410,13 @@ function renderTable() {
       }
     }
 
-    return `<tr>
-      <td class="item-name">${item.name}</td>
+    const rowStyle = isWatched ? 'background:#fffbe6; border-left:3px solid #f5c400;' : '';
+    const nameHtml = isWatched
+      ? `<strong>${item.name}</strong> <span style="font-size:11px;color:#7a6200;font-weight:600;">${watchedDef.label}</span>`
+      : item.name;
+
+    return `<tr style="${rowStyle}">
+      <td class="item-name">${nameHtml}</td>
       <td>${catBadge}</td>
       ${priceCells}
       <td>${changeBadge}</td>
@@ -422,9 +429,10 @@ function renderChart() {
   if (priceHistory.length < 2) { card.hidden = true; return; }
   card.hidden = false;
 
-  const allNames = [...new Set(priceHistory.flatMap(s => s.items.map(i => i.name)))];
+  const chartSnapshots = priceHistory.slice(-CHART_COUNT);
+  const allNames = [...new Set(chartSnapshots.flatMap(s => s.items.map(i => i.name)))];
   const variance = allNames.map(name => {
-    const prices = priceHistory.map(s => s.items.find(i => i.name === name)?.price).filter(Boolean);
+    const prices = chartSnapshots.map(s => s.items.find(i => i.name === name)?.price).filter(Boolean);
     if (prices.length < 2) return { name, v: 0 };
     return { name, v: (Math.max(...prices) - Math.min(...prices)) / Math.min(...prices) };
   });
@@ -433,7 +441,7 @@ function renderChart() {
 
   const colors = ['#1a6bb5','#c0392b','#2a7a3a','#b56a1a','#7b3fa0'];
   const dashes = [[], [6,3], [2,2], [8,3], [4,2]];
-  const labels = priceHistory.map(s => s.date);
+  const labels = chartSnapshots.map(s => s.date);
 
   document.getElementById('chartLegend').innerHTML = tracked.map((name, i) =>
     `<span class="legend-item"><span class="legend-swatch" style="background:${colors[i]};"></span>${name}</span>`
@@ -446,7 +454,7 @@ function renderChart() {
       labels,
       datasets: tracked.map((name, i) => ({
         label: name,
-        data: priceHistory.map(s => s.items.find(it => it.name === name)?.price ?? null),
+        data: chartSnapshots.map(s => s.items.find(it => it.name === name)?.price ?? null),
         borderColor: colors[i], backgroundColor: 'transparent',
         tension: 0.3, pointRadius: 4, borderDash: dashes[i], spanGaps: true
       }))
