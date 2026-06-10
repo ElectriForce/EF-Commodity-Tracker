@@ -1,0 +1,1023 @@
+[
+  {
+    "date": "2026-02-23",
+    "source": "2-23-26 CUSTOMER HOTSHEET.pdf",
+    "items": [
+      {
+        "name": "THHN 14 BLK SOL CU",
+        "category": "THHN",
+        "price": 135.88
+      },
+      {
+        "name": "THHN 14 BLK 19STR CU",
+        "category": "THHN",
+        "price": 151.0
+      },
+      {
+        "name": "THHN 12 BLK SOL CU",
+        "category": "THHN",
+        "price": 208.38
+      },
+      {
+        "name": "THHN 12 BLK 19STR CU",
+        "category": "THHN",
+        "price": 223.25
+      },
+      {
+        "name": "THHN 10 BLK SOL CU",
+        "category": "THHN",
+        "price": 325.99
+      },
+      {
+        "name": "THHN 10 BLK 19STR CU",
+        "category": "THHN",
+        "price": 341.38
+      },
+      {
+        "name": "THHN 8 BK 19STR CU",
+        "category": "THHN",
+        "price": 633.75
+      },
+      {
+        "name": "THHN 6 BLK 19STR CU",
+        "category": "THHN",
+        "price": 974.88
+      },
+      {
+        "name": "THHN 4 BLK 19STR CU",
+        "category": "THHN",
+        "price": 1491.88
+      },
+      {
+        "name": "THHN 3 BLK 19STR CU",
+        "category": "THHN",
+        "price": 1881.75
+      },
+      {
+        "name": "THHN 2 BLK 19STR CU",
+        "category": "THHN",
+        "price": 2355.38
+      },
+      {
+        "name": "THHN 1 BLK 19STR CU",
+        "category": "THHN",
+        "price": 2699.63
+      },
+      {
+        "name": "THHN 1/0 BLK 19STR CU",
+        "category": "THHN",
+        "price": 3305.25
+      },
+      {
+        "name": "THHN 2/0 BLK 19STR CU",
+        "category": "THHN",
+        "price": 4071.38
+      },
+      {
+        "name": "THHN 3/0 BLK 19STR CU",
+        "category": "THHN",
+        "price": 5138.25
+      },
+      {
+        "name": "THHN 4/0 BLK 19STR CU",
+        "category": "THHN",
+        "price": 6413.75
+      },
+      {
+        "name": "THHN 250 BLK 37STR CU",
+        "category": "THHN",
+        "price": 7432.0
+      },
+      {
+        "name": "THHN 300 BLK 37STR CU",
+        "category": "THHN",
+        "price": 8912.88
+      },
+      {
+        "name": "THHN 350 BLK 37STR CU",
+        "category": "THHN",
+        "price": 10436.13
+      },
+      {
+        "name": "THHN 400 BLK 37STR CU",
+        "category": "THHN",
+        "price": 11871.5
+      },
+      {
+        "name": "THHN 500 BLK 37STR CU",
+        "category": "THHN",
+        "price": 15000.63
+      },
+      {
+        "name": "THHN 600 BLK 61STR CU",
+        "category": "THHN",
+        "price": 18582.75
+      },
+      {
+        "name": "THHN 750 BLK 61STR CU",
+        "category": "THHN",
+        "price": 31597.0
+      },
+      {
+        "name": "MCA 14/2 WG 250",
+        "category": "MC Cable",
+        "price": 731.3
+      },
+      {
+        "name": "MCA 14/3 WG 250",
+        "category": "MC Cable",
+        "price": 1220.0
+      },
+      {
+        "name": "MCA 14/4 WG 250",
+        "category": "MC Cable",
+        "price": 1700.78
+      },
+      {
+        "name": "MCA 12/2 WG 250",
+        "category": "MC Cable",
+        "price": 733.64
+      },
+      {
+        "name": "MCA 12/3 WG 250",
+        "category": "MC Cable",
+        "price": 1295.45
+      },
+      {
+        "name": "MCA 12/4 WG 250",
+        "category": "MC Cable",
+        "price": 1826.62
+      },
+      {
+        "name": "MCA 10/2 WG 250",
+        "category": "MC Cable",
+        "price": 1675.19
+      },
+      {
+        "name": "MCA 10/3 WG 250",
+        "category": "MC Cable",
+        "price": 2347.53
+      },
+      {
+        "name": "MCA 10/4 WG 250",
+        "category": "MC Cable",
+        "price": 3685.45
+      },
+      {
+        "name": "HCA 14/2 WG 250",
+        "category": "MC Cable",
+        "price": 771.43
+      },
+      {
+        "name": "HCA 12/2 WG 250",
+        "category": "MC Cable",
+        "price": 1212.47
+      },
+      {
+        "name": "HCA 12/3 WG 250",
+        "category": "MC Cable",
+        "price": 1787.66
+      },
+      {
+        "name": "XHHW 12 BLK 19STR CU",
+        "category": "XHHW",
+        "price": 300.38
+      },
+      {
+        "name": "XHHW 10 BLK 19STR CU",
+        "category": "XHHW",
+        "price": 453.0
+      },
+      {
+        "name": "XHHW 8 BK 19STR CU",
+        "category": "XHHW",
+        "price": 711.38
+      },
+      {
+        "name": "XHHW 6 BLK 19STR CU",
+        "category": "XHHW",
+        "price": 1086.25
+      },
+      {
+        "name": "XHHW 4 BLK 19STR CU",
+        "category": "XHHW",
+        "price": 1647.63
+      },
+      {
+        "name": "XHHW 3 BLK 19STR CU",
+        "category": "XHHW",
+        "price": 2026.75
+      },
+      {
+        "name": "XHHW 2 BLK 19STR CU",
+        "category": "XHHW",
+        "price": 2578.75
+      },
+      {
+        "name": "XHHW 1/0 BLK 19STR CU",
+        "category": "XHHW",
+        "price": 3482.25
+      },
+      {
+        "name": "XHHW 2/0 BLK 19STR CU",
+        "category": "XHHW",
+        "price": 4350.75
+      },
+      {
+        "name": "XHHW 4/0 BLK 19STR CU",
+        "category": "XHHW",
+        "price": 6830.13
+      },
+      {
+        "name": "XHHW 250 BLK 37STR CU",
+        "category": "XHHW",
+        "price": 7952.63
+      },
+      {
+        "name": "XHHW 350 BLK 37STR CU",
+        "category": "XHHW",
+        "price": 11046.38
+      },
+      {
+        "name": "XHHW 500 BLK 37STR CU",
+        "category": "XHHW",
+        "price": 15713.13
+      },
+      {
+        "name": "XHHW 600 BLK 61STR CU",
+        "category": "XHHW",
+        "price": 19841.38
+      },
+      {
+        "name": "NM-B 14/2 W/G",
+        "category": "NM-B",
+        "price": 375.11
+      },
+      {
+        "name": "NM-B 14/3 W/G",
+        "category": "NM-B",
+        "price": 499.5
+      },
+      {
+        "name": "NM-B 12/2 W/G",
+        "category": "NM-B",
+        "price": 555.63
+      },
+      {
+        "name": "NM-B 12/3 W/G",
+        "category": "NM-B",
+        "price": 762.25
+      },
+      {
+        "name": "NM-B 10/2 W/G",
+        "category": "NM-B",
+        "price": 969.38
+      },
+      {
+        "name": "NM-B 10/3 W/G",
+        "category": "NM-B",
+        "price": 1207.0
+      },
+      {
+        "name": "NM-B 8/2 W/G",
+        "category": "NM-B",
+        "price": 1652.38
+      },
+      {
+        "name": "XHHW-AL-6",
+        "category": "Alum",
+        "price": 296.63
+      },
+      {
+        "name": "XHHW-AL-4",
+        "category": "Alum",
+        "price": 372.75
+      },
+      {
+        "name": "XHHW-AL-2",
+        "category": "Alum",
+        "price": 466.5
+      },
+      {
+        "name": "XHHW-AL-1",
+        "category": "Alum",
+        "price": 656.63
+      },
+      {
+        "name": "XHHW-AL-1/0",
+        "category": "Alum",
+        "price": 726.24
+      },
+      {
+        "name": "XHHW-AL-2/0",
+        "category": "Alum",
+        "price": 858.13
+      },
+      {
+        "name": "XHHW-AL-3/0",
+        "category": "Alum",
+        "price": 1064.75
+      },
+      {
+        "name": "XHHW-AL-4/0",
+        "category": "Alum",
+        "price": 1189.0
+      },
+      {
+        "name": "XHHW-AL-250",
+        "category": "Alum",
+        "price": 1491.88
+      },
+      {
+        "name": "XHHW-AL-300",
+        "category": "Alum",
+        "price": 2038.13
+      },
+      {
+        "name": "XHHW-AL-350",
+        "category": "Alum",
+        "price": 2105.38
+      },
+      {
+        "name": "XHHW-AL-400",
+        "category": "Alum",
+        "price": 2379.13
+      },
+      {
+        "name": "XHHW-AL-500",
+        "category": "Alum",
+        "price": 2632.63
+      },
+      {
+        "name": "XHHW-AL-600",
+        "category": "Alum",
+        "price": 3361.38
+      },
+      {
+        "name": "XHHW-AL-700",
+        "category": "Alum",
+        "price": 3848.13
+      },
+      {
+        "name": "XHHW-AL-750",
+        "category": "Alum",
+        "price": 3893.75
+      },
+      {
+        "name": "XHHW-AL-1000",
+        "category": "Alum",
+        "price": 6863.5
+      },
+      {
+        "name": "8-Solid Bare",
+        "category": "Bare Copper",
+        "price": 461.47
+      },
+      {
+        "name": "6-Solid Bare",
+        "category": "Bare Copper",
+        "price": 855.07
+      },
+      {
+        "name": "4-Solid Bare",
+        "category": "Bare Copper",
+        "price": 1398.79
+      },
+      {
+        "name": "4/0 19-Str Bare",
+        "category": "Bare Copper",
+        "price": 6504.67
+      },
+      {
+        "name": "PVC-Sched-40-Conduit-1/2",
+        "category": "PVC",
+        "price": 28.31
+      },
+      {
+        "name": "PVC-Sched-40-Conduit-3/4",
+        "category": "PVC",
+        "price": 34.0
+      },
+      {
+        "name": "PVC-Sched-40-Conduit-1",
+        "category": "PVC",
+        "price": 49.63
+      },
+      {
+        "name": "PVC-Sched-40-Conduit-1-1/4",
+        "category": "PVC",
+        "price": 71.47
+      },
+      {
+        "name": "PVC-Sched-40-Conduit-1-1/2",
+        "category": "PVC",
+        "price": 82.85
+      },
+      {
+        "name": "PVC-Sched-40-Conduit-2",
+        "category": "PVC",
+        "price": 103.35
+      },
+      {
+        "name": "PVC-Sched-40-Conduit-2-1/2",
+        "category": "PVC",
+        "price": 161.99
+      },
+      {
+        "name": "PVC-Sched-40-Conduit-3",
+        "category": "PVC",
+        "price": 197.87
+      },
+      {
+        "name": "PVC-Sched-40-Conduit-3-1/2",
+        "category": "PVC",
+        "price": 252.39
+      },
+      {
+        "name": "PVC-Sched-40-Conduit-4",
+        "category": "PVC",
+        "price": 272.81
+      },
+      {
+        "name": "PVC-Sched-40-Conduit-5",
+        "category": "PVC",
+        "price": 385.35
+      },
+      {
+        "name": "PVC-Sched-40-Conduit-6",
+        "category": "PVC",
+        "price": 503.99
+      },
+      {
+        "name": "EMT-1/2",
+        "category": "EMT",
+        "price": 52.77
+      },
+      {
+        "name": "EMT-3/4",
+        "category": "EMT",
+        "price": 93.12
+      },
+      {
+        "name": "EMT-1",
+        "category": "EMT",
+        "price": 159.67
+      },
+      {
+        "name": "EMT-1-1/4",
+        "category": "EMT",
+        "price": 260.45
+      },
+      {
+        "name": "EMT-1-1/2",
+        "category": "EMT",
+        "price": 318.29
+      },
+      {
+        "name": "EMT-2",
+        "category": "EMT",
+        "price": 371.31
+      },
+      {
+        "name": "EMT-2-1/2",
+        "category": "EMT",
+        "price": 564.56
+      },
+      {
+        "name": "EMT-3",
+        "category": "EMT",
+        "price": 715.89
+      },
+      {
+        "name": "EMT-3-1/2",
+        "category": "EMT",
+        "price": 942.21
+      },
+      {
+        "name": "EMT-4",
+        "category": "EMT",
+        "price": 966.6
+      },
+      {
+        "name": "GAL-1/2",
+        "category": "Galv",
+        "price": 287.79
+      },
+      {
+        "name": "GAL-3/4",
+        "category": "Galv",
+        "price": 297.89
+      },
+      {
+        "name": "GAL-1",
+        "category": "Galv",
+        "price": 474.08
+      },
+      {
+        "name": "GAL-1-1/4",
+        "category": "Galv",
+        "price": 697.25
+      },
+      {
+        "name": "GAL-1-1/2",
+        "category": "Galv",
+        "price": 785.4
+      },
+      {
+        "name": "GAL-2",
+        "category": "Galv",
+        "price": 964.73
+      },
+      {
+        "name": "GAL-2-1/2",
+        "category": "Galv",
+        "price": 1813.67
+      },
+      {
+        "name": "GAL-3",
+        "category": "Galv",
+        "price": 2060.17
+      },
+      {
+        "name": "GAL-3-1/2",
+        "category": "Galv",
+        "price": 2683.87
+      },
+      {
+        "name": "GAL-4",
+        "category": "Galv",
+        "price": 2855.92
+      },
+      {
+        "name": "GAL-5",
+        "category": "Galv",
+        "price": 5318.83
+      },
+      {
+        "name": "GAL-6",
+        "category": "Galv",
+        "price": 6938.41
+      },
+      {
+        "name": "EMT-1/2",
+        "category": "EMT",
+        "price": 65.89
+      },
+      {
+        "name": "EMT-3/4",
+        "category": "EMT",
+        "price": 113.08
+      },
+      {
+        "name": "EMT-1",
+        "category": "EMT",
+        "price": 192.63
+      },
+      {
+        "name": "EMT-1-1/4",
+        "category": "EMT",
+        "price": 375.47
+      },
+      {
+        "name": "EMT-1-1/2",
+        "category": "EMT",
+        "price": 464.57
+      },
+      {
+        "name": "EMT-2",
+        "category": "EMT",
+        "price": 584.11
+      },
+      {
+        "name": "EMT-2-1/2",
+        "category": "EMT",
+        "price": 900.03
+      },
+      {
+        "name": "EMT-3",
+        "category": "EMT",
+        "price": 1094.75
+      },
+      {
+        "name": "EMT-3-1/2",
+        "category": "EMT",
+        "price": 1461.71
+      },
+      {
+        "name": "EMT-4",
+        "category": "EMT",
+        "price": 1507.35
+      },
+      {
+        "name": "IMC-1/2",
+        "category": "IMC",
+        "price": 157.72
+      },
+      {
+        "name": "IMC-3/4",
+        "category": "IMC",
+        "price": 186.44
+      },
+      {
+        "name": "IMC-1",
+        "category": "IMC",
+        "price": 285.77
+      },
+      {
+        "name": "IMC-1-1/4",
+        "category": "IMC",
+        "price": 400.61
+      },
+      {
+        "name": "IMC-1-1/2",
+        "category": "IMC",
+        "price": 498.81
+      },
+      {
+        "name": "IMC-2",
+        "category": "IMC",
+        "price": 625.35
+      },
+      {
+        "name": "IMC-2-1/2",
+        "category": "IMC",
+        "price": 1236.24
+      },
+      {
+        "name": "IMC-3",
+        "category": "IMC",
+        "price": 1616.23
+      },
+      {
+        "name": "IMC-3-1/2",
+        "category": "IMC",
+        "price": 1899.95
+      },
+      {
+        "name": "IMC-4",
+        "category": "IMC",
+        "price": 2134.31
+      },
+      {
+        "name": "ALU-1/2",
+        "category": "Alum",
+        "price": 160.93
+      },
+      {
+        "name": "ALU-3/4",
+        "category": "Alum",
+        "price": 210.69
+      },
+      {
+        "name": "ALU-1",
+        "category": "Alum",
+        "price": 307.01
+      },
+      {
+        "name": "ALU-1-1/4",
+        "category": "Alum",
+        "price": 377.43
+      },
+      {
+        "name": "ALU-1-1/2",
+        "category": "Alum",
+        "price": 499.68
+      },
+      {
+        "name": "ALU-2",
+        "category": "Alum",
+        "price": 614.41
+      },
+      {
+        "name": "ALU-2-1/2",
+        "category": "Alum",
+        "price": 1004.59
+      },
+      {
+        "name": "ALU-3",
+        "category": "Alum",
+        "price": 1319.63
+      },
+      {
+        "name": "ALU-3-1/2",
+        "category": "Alum",
+        "price": 1583.76
+      },
+      {
+        "name": "ALU-4",
+        "category": "Alum",
+        "price": 1876.29
+      },
+      {
+        "name": "ALU-5",
+        "category": "Alum",
+        "price": 2607.23
+      },
+      {
+        "name": "ALU-6",
+        "category": "Alum",
+        "price": 3114.8
+      },
+      {
+        "name": "1/2\" SS COUP",
+        "category": "Fittings",
+        "price": 70.25
+      },
+      {
+        "name": "3/4\" SS COUP",
+        "category": "Fittings",
+        "price": 102.04
+      },
+      {
+        "name": "1\" SS COUP",
+        "category": "Fittings",
+        "price": 154.56
+      },
+      {
+        "name": "1-1/4\" SS COUP",
+        "category": "Fittings",
+        "price": 345.2
+      },
+      {
+        "name": "1-1/2\" SS COUP",
+        "category": "Fittings",
+        "price": 529.11
+      },
+      {
+        "name": "2\" SS COUP",
+        "category": "Fittings",
+        "price": 685.41
+      },
+      {
+        "name": "2-1/2\" SS COUP",
+        "category": "Fittings",
+        "price": 1446.71
+      },
+      {
+        "name": "3\" SS COUP",
+        "category": "Fittings",
+        "price": 1664.67
+      },
+      {
+        "name": "3-1/2\" SS COUP",
+        "category": "Fittings",
+        "price": 1869.31
+      },
+      {
+        "name": "4\" SS COUP",
+        "category": "Fittings",
+        "price": 2153.75
+      },
+      {
+        "name": "1/2\" CMP COUP",
+        "category": "Fittings",
+        "price": 126.67
+      },
+      {
+        "name": "3/4\" CMP COUP",
+        "category": "Fittings",
+        "price": 157.4
+      },
+      {
+        "name": "1\" CMP COUP",
+        "category": "Fittings",
+        "price": 266.0
+      },
+      {
+        "name": "1-1/4\" CMP COUP",
+        "category": "Fittings",
+        "price": 456.83
+      },
+      {
+        "name": "1-1/2\" CMP COUP",
+        "category": "Fittings",
+        "price": 683.57
+      },
+      {
+        "name": "2\" CMP COUP",
+        "category": "Fittings",
+        "price": 868.39
+      },
+      {
+        "name": "2-1/2\" CMP COUP",
+        "category": "Fittings",
+        "price": 3382.79
+      },
+      {
+        "name": "3\" CMP COUP",
+        "category": "Fittings",
+        "price": 3894.52
+      },
+      {
+        "name": "3-1/2\" CMP COUP",
+        "category": "Fittings",
+        "price": 6095.6
+      },
+      {
+        "name": "4\" CMP COUP",
+        "category": "Fittings",
+        "price": 6044.43
+      },
+      {
+        "name": "1/2\" SS CONN",
+        "category": "Fittings",
+        "price": 57.45
+      },
+      {
+        "name": "3/4\" SS CONN",
+        "category": "Fittings",
+        "price": 90.15
+      },
+      {
+        "name": "1\" SS CONN",
+        "category": "Fittings",
+        "price": 173.79
+      },
+      {
+        "name": "1-1/4\" SS CONN",
+        "category": "Fittings",
+        "price": 292.71
+      },
+      {
+        "name": "1-1/2\" SS CONN",
+        "category": "Fittings",
+        "price": 418.07
+      },
+      {
+        "name": "2\" SS CONN",
+        "category": "Fittings",
+        "price": 606.6
+      },
+      {
+        "name": "2-1/2\" SS CONN",
+        "category": "Fittings",
+        "price": 1825.05
+      },
+      {
+        "name": "3\" SS CONN",
+        "category": "Fittings",
+        "price": 2171.56
+      },
+      {
+        "name": "3-1/2\" SS CONN",
+        "category": "Fittings",
+        "price": 3023.43
+      },
+      {
+        "name": "4\" SS CONN",
+        "category": "Fittings",
+        "price": 3168.91
+      },
+      {
+        "name": "1/2\" CMP CONN",
+        "category": "Fittings",
+        "price": 105.59
+      },
+      {
+        "name": "3/4\" CMP CONN",
+        "category": "Fittings",
+        "price": 128.27
+      },
+      {
+        "name": "1\" CMP CONN",
+        "category": "Fittings",
+        "price": 226.53
+      },
+      {
+        "name": "1-1/4\" CMP CONN",
+        "category": "Fittings",
+        "price": 390.96
+      },
+      {
+        "name": "1-1/2\" CMP CONN",
+        "category": "Fittings",
+        "price": 641.29
+      },
+      {
+        "name": "2\" CMP CONN",
+        "category": "Fittings",
+        "price": 873.96
+      },
+      {
+        "name": "2-1/2\" CMP CONN",
+        "category": "Fittings",
+        "price": 2547.16
+      },
+      {
+        "name": "3\" CMP CONN",
+        "category": "Fittings",
+        "price": 3811.29
+      },
+      {
+        "name": "3-1/2\" CMP CONN",
+        "category": "Fittings",
+        "price": 5379.97
+      },
+      {
+        "name": "4\" CMP CONN",
+        "category": "Fittings",
+        "price": 5287.67
+      },
+      {
+        "name": "EMT12ELL90",
+        "category": "EMT",
+        "price": 436.28
+      },
+      {
+        "name": "EMT34ELL90",
+        "category": "EMT",
+        "price": 492.72
+      },
+      {
+        "name": "EMT1ELL90",
+        "category": "EMT",
+        "price": 757.77
+      },
+      {
+        "name": "EMT114ELL90",
+        "category": "EMT",
+        "price": 1030.88
+      },
+      {
+        "name": "EMT112ELL90",
+        "category": "EMT",
+        "price": 1198.88
+      },
+      {
+        "name": "EMT2ELL90",
+        "category": "EMT",
+        "price": 1711.57
+      },
+      {
+        "name": "EMT212ELL90",
+        "category": "EMT",
+        "price": 3561.02
+      },
+      {
+        "name": "EMT3ELL90",
+        "category": "EMT",
+        "price": 5562.22
+      },
+      {
+        "name": "EMT312ELL90",
+        "category": "EMT",
+        "price": 7116.37
+      },
+      {
+        "name": "EMT4ELL90",
+        "category": "EMT",
+        "price": 8770.88
+      },
+      {
+        "name": "GAL12ELL",
+        "category": "Galv",
+        "price": 851.42
+      },
+      {
+        "name": "GAL34ELL",
+        "category": "Galv",
+        "price": 889.46
+      },
+      {
+        "name": "GAL1ELL",
+        "category": "Galv",
+        "price": 1389.8
+      },
+      {
+        "name": "GAL114ELL",
+        "category": "Galv",
+        "price": 1942.6
+      },
+      {
+        "name": "GAL112ELL",
+        "category": "Galv",
+        "price": 2364.08
+      },
+      {
+        "name": "GAL2ELL",
+        "category": "Galv",
+        "price": 3607.35
+      },
+      {
+        "name": "GAL212ELL",
+        "category": "Galv",
+        "price": 7152.63
+      },
+      {
+        "name": "GAL3ELL",
+        "category": "Galv",
+        "price": 9711.78
+      },
+      {
+        "name": "GAL312ELL",
+        "category": "Galv",
+        "price": 13349.26
+      },
+      {
+        "name": "GAL4ELL",
+        "category": "Galv",
+        "price": 15995.43
+      }
+    ]
+  }
+]
