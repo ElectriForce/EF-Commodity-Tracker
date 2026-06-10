@@ -1,4 +1,3 @@
-
 import anthropic
 import base64
 import json
@@ -127,13 +126,14 @@ def save_history(history: list):
     print(f"Saved {len(history)} snapshots to {DATA_FILE}")
 
 
-def archive_pdf(pdf_path: str):
+def archive_pdf(pdf_path: str, snapshot_date: str):
     src = Path(pdf_path)
     dest_dir = Path("inbox/processed")
     dest_dir.mkdir(parents=True, exist_ok=True)
-    dest = dest_dir / src.name
+    clean_name = f"{snapshot_date}_mayer_hotsheet.pdf"
+    dest = dest_dir / clean_name
     src.rename(dest)
-    print(f"Archived {src.name} to inbox/processed/")
+    print(f"Archived {src.name} -> inbox/processed/{clean_name}")
 
 
 def main():
@@ -154,7 +154,7 @@ def main():
     history.sort(key=lambda x: x["date"])
 
     save_history(history)
-    archive_pdf(PDF_PATH)
+    archive_pdf(PDF_PATH, snapshot_date)
     print(f"Done — {len(items)} prices saved for {snapshot_date}")
 
 
