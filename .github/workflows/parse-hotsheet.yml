@@ -27,12 +27,13 @@ jobs:
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
         run: |
-          PDFS=$(ls inbox/*.pdf 2>/dev/null)
-          if [ -z "$PDFS" ]; then
+          shopt -s nullglob
+          PDFS=(inbox/*.pdf)
+          if [ ${#PDFS[@]} -eq 0 ]; then
             echo "No PDFs found in inbox/"
             exit 0
           fi
-          for PDF in $PDFS; do
+          for PDF in "${PDFS[@]}"; do
             echo "Processing: $PDF"
             PDF_PATH="$PDF" python scripts/parse_hotsheet.py
           done
