@@ -199,7 +199,12 @@
 
   <div class="card" id="chartCard" hidden>
     <div class="card-header">
-      <span class="card-title">Price trend — tracked items (last 24 reports)</span>
+      <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap;">
+        <span class="card-title">Price trend — all history</span>
+        <select id="chartItemSelect" onchange="renderChart()" style="font-size:12px;padding:4px 8px;border:1px solid var(--gray-200);border-radius:var(--radius);background:var(--white);color:var(--black);cursor:pointer;">
+          <option value="all">All pinned items</option>
+        </select>
+      </div>
       <div class="legend" id="chartLegend" aria-label="Chart legend"></div>
     </div>
     <div style="position:relative; width:100%; height:280px;">
@@ -209,7 +214,7 @@
 
   <div class="card">
     <div class="card-header">
-      <span class="card-title">Price history — last 5 reports</span>
+      <span class="card-title">Price history — last 3 reports</span>
       <span style="font-size:12px; color:var(--gray-400);" id="itemCount"></span>
     </div>
     <div class="table-wrap">
@@ -238,8 +243,8 @@
 const GITHUB_OWNER = 'ElectriForce';
 const GITHUB_REPO  = 'EF-Commodity-Tracker';
 const DATA_URL     = `https://raw.githubusercontent.com/${GITHUB_OWNER}/${GITHUB_REPO}/main/data/prices.json`;
-const HISTORY_COUNT = 5;
-const CHART_COUNT = 24;
+const HISTORY_COUNT = 3;
+const CHART_COUNT = 9999; // show all
 
 let priceHistory = [];
 let currentFilter = 'all';
@@ -429,36 +434,60 @@ function renderChart() {
   if (priceHistory.length < 2) { card.hidden = true; return; }
   card.hidden = false;
 
-  const chartSnapshots = priceHistory.slice(-CHART_COUNT);
+  // Populate dropdown on first render
+  const select = document.getElementById('chartItemSelect');
+  if (select.options.length === 1) {
+    WATCHED_ITEMS.forEach(w => {
+      const opt = document.createElement('option');
+      opt.value = w.key;
+      opt.textContent = w.label;
+      select.appendChild(opt);
+    });
+  }
 
-  // Use pinned watched items for the chart
-  const tracked = WATCHED_ITEMS.map(w => w.key);
+  const selectedKey = select.value;
+  const chartSnapshots = priceHistory; // all history
+
   const colors = ['#1a6bb5','#c0392b','#2a7a3a','#b56a1a','#7b3fa0','#8a5a1a','#1a8a8a'];
   const dashes = [[], [6,3], [2,2], [8,3], [4,2], [3,2], [6,2]];
   const labels = chartSnapshots.map(s => s.date);
 
-  document.getElementById('chartLegend').innerHTML = WATCHED_ITEMS.map((w, i) =>
-    `<span class="legend-item"><span class="legend-swatch" style="background:${colors[i]};"></span>${w.label}</span>`
-  ).join('');
+  // Filter to single item or all
+  const itemsToShow = selectedKey === 'all'
+    ? WATCHED_ITEMS
+    : WATCHED_ITEMS.filter(w => w.key === selectedKey);
+
+  document.getElementById('chartLegend').innerHTML = selectedKey === 'all'
+    ? WATCHED_ITEMS.map((w, i) =>
+        `<span class="legend-item"><span class="legend-swatch" style="background:${colors[i]};"></span>${w.label}</span>`
+      ).join('')
+    : '';
 
   if (trendChart) trendChart.destroy();
   trendChart = new Chart(document.getElementById('trendChart'), {
     type: 'line',
     data: {
       labels,
-      datasets: WATCHED_ITEMS.map((w, i) => ({
-        label: w.label,
-        data: chartSnapshots.map(s => s.items.find(it => it.name === w.key)?.price ?? null),
-        borderColor: colors[i], backgroundColor: 'transparent',
-        tension: 0.3, pointRadius: 4, borderDash: dashes[i], spanGaps: true
-      }))
+      datasets: itemsToShow.map(w => {
+        const i = WATCHED_ITEMS.indexOf(w);
+        return {
+          label: w.label,
+          data: chartSnapshots.map(s => s.items.find(it => it.name === w.key)?.price ?? null),
+          borderColor: colors[i], backgroundColor: colors[i] + '18',
+          tension: 0.3, pointRadius: 4, borderDash: dashes[i], spanGaps: true,
+          fill: selectedKey !== 'all'
+        };
+      })
     },
     options: {
       responsive: true, maintainAspectRatio: false,
-      plugins: { legend: { display: false } },
+      plugins: {
+        legend: { display: selectedKey !== 'all', position: 'top' },
+        tooltip: { callbacks: { label: ctx => `${ctx.dataset.label}: $${ctx.parsed.y.toLocaleString('en-US',{minimumFractionDigits:2,maximumFractionDigits:2})}` } }
+      },
       scales: {
         y: { ticks: { callback: v => '$' + v.toLocaleString() }, grid: { color: 'rgba(0,0,0,0.05)' } },
-        x: { ticks: { autoSkip: false, maxRotation: 45 } }
+        x: { ticks: { autoSkip: true, maxRotation: 45, maxTicksLimit: 12 } }
       }
     }
   });
